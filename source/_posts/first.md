@@ -1,10 +1,13 @@
 ---
 title: 平時小問題解決
 date: 2018-04-28 11:18:40
-tags:
+tags: docker ubuntu
 ---
-## 安装matplotlib python-tk 网上解决方法需要重新编译 python matplotlib error python Tkinter module not found on Ubuntu 
-> 解决方案
+## pyhon matplotlib 安装
+
+* 安装matplotlib python-tk 网上解决方法需要重新编译 python matplotlib error python Tkinter module not found on Ubuntu 
+* 解决方案
+> 
 ``` bash
 sudo apt-get install python3.6-tk
 ```

@@ -62,3 +62,7 @@ $ hexo deploy
 ```
 
 更多信息: [Deployment](https://hexo.io/docs/deployment.html)
+
+
+# 主题库
+[Themes](https://hexo.io/themes/index.html)
