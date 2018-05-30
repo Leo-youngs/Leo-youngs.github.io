@@ -79,6 +79,6 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repository: https://github.com/Leo-youngs/Leo-youngs.github.io
+  repository: git@github.com:Leo-youngs/Leo-youngs.github.io.git
   branch: master
   message: update
