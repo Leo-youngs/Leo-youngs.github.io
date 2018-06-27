@@ -83,6 +83,26 @@ chown -R gpadmin:gpadmin /home/gpadmin
 passwd gpadmin
 ```
 
+
+8. 关闭 iptables，selinux
+```bash
+service iptables stop
+chkconfig iptables off
+
+[root@mdw selinux]# cat /etc/selinux/config 
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=disabled
+# SELINUXTYPE= can take one of these two values:
+#     targeted - Targeted processes are protected,
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted 
+
+```
+
 ## 下载安装包并安装
 
 1. 官网下载 https://network.pivotal.io/products/pivotal-gpdb  (这里可能需要注册)
