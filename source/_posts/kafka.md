@@ -1,123 +1,141 @@
 ---
-title: kafka
+title: kafka 安装及配置
 date: 2018-05-30 10:52:58
 tags: 消息队列 greenplum 
 ---
-## Kafka安装配置
-这里只用到 kafka 的基本功能，所以演示单机安装
-系统： **Ubuntu 18.04**
 
-### 安装配置 ZooKeeper
+## 基本介绍
+
+kafka是一个分布式消息队列。具有高性能、持久化、多副本备份、横向扩展能力。生产者往队列里写消息，
+消费者从队列里取消息进行业务逻辑。一般在架构设计中起到解耦、削峰、异步处理的作用。
+
+## 环境介绍
+
+* 系统： Ubuntu 18.04
+
+## 安装配置 ZooKeeper
+
 1. 下载 配置
-``` bash
-# 打开 zoo.cfg 可以配置端口，目录等
-$ wget http://mirrors.cnnic.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
-$ tar zxvf zookeeper-3.4.6.tar.gz
-$ cd zookeeper-3.4.6
-$ cp -rf conf/zoo_sample.cfg conf/zoo.cfg
-$ vim conf/zoo.cfg
-```
-2. 启动
-``` bash 
-$ sh bin/zkServer.sh start
-```
 
-### 安装配置 Kafka
+    ```bash
+    # 打开 zoo.cfg 可以配置端口，目录等
+    wget http://mirrors.cnnic.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
+    tar zxvf zookeeper-3.4.6.tar.gz
+    cd zookeeper-3.4.6
+    cp -rf conf/zoo_sample.cfg conf/zoo.cfg
+    vim conf/zoo.cfg
+
+    # 启动
+    bin/zkServer.start
+    ```
+
+## 安装配置 Kafka
+
 1. 下载 配置 (需要修改 `server.properties zookeeper.connect=localhost:2181`)
-``` bash
-# 打开 zoo.cfg 可以配置端口，目录等
-$ wget http://apache.fayea.com/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz
-$ tar -zxf kafka_2.10-0.8.2.1.tgz
-$ cd kafka_2.10-0.8.2.1
-$ vi config/server.properties
 
-```
+    ``` bash
+    # 打开 zoo.cfg 可以配置端口，目录等
+    wget http://apache.fayea.com/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz
+    tar -zxf kafka_2.10-0.8.2.1.tgz
+    cd kafka_2.10-0.8.2.1
+    vi config/server.properties
+    ```
+
 2. 启动
-``` bash 
-sh bin/kafka-server-start.sh config/server.properties
-```
+
+    ``` bash
+    bin/kafka-server-start.config/server.properties
+    ```
+
 3. 命令简介
 
-```bash 
-# 创建Topic
+    ```bash
+    # 创建Topic
+    bin/kafka-topics --create --topic kafkatopic --replication-factor 1 --partitions 1 --zookeeper localhost:2181
 
-$ sh bin/kafka-topics --create --topic kafkatopic --replication-factor 1 --partitions 1 --zookeeper localhost:2181
+    # 查看Topic
+    bin/kafka-topics --list --zookeeper localhost:2181
 
-# 查看Topic
-$ sh bin/kafka-topics --list --zookeeper localhost:2181
+    # 启动Producer 生产消息
+    bin/kafka-console-producer --broker-list localhost:9092 --topic kafkatopic
 
-# 启动Producer 生产消息
-$ sh bin/kafka-console-producer --broker-list localhost:9092 --topic kafkatopic
+    # 启动Consumer 消费消息
+    bin/kafka-console-consumer --zookeeper localhost:2181 --topic kafkatopic --from-beginning
 
-# 启动Consumer 消费消息
-$ sh bin/kafka-console-consumer --zookeeper localhost:2181 --topic kafkatopic --from-beginning
+    # 删除Topic
+    bin/kafka-run-class kafka.admin.TopicCommand --delete --topic kafkatopic --zookeeper localhost:2181
 
-# 删除Topic
-$ sh bin/kafka-run-class kafka.admin.TopicCommand --delete --topic kafkatopic --zookeeper localhost:2181
+    # 查看Topic 的offset 
+    bin/kafka-consumer-offset-checker    --zookeeper localhost:2181 --topic kafkatopic --group consumer
 
-# 查看Topic 的offset 
-$ sh bin/kafka-consumer-offset-checker  --zookeeper localhost:2181 --topic kafkatopic --group consumer
+    ```
 
-```
+## Kadka 监控配置
 
-### KafkaOffsetMonitor 安装配置 
-1. 下载   https://github.com/quantifind/KafkaOffsetMonitor/releases/tag/v0.2.0
-2. 启动 
-```bash
-java -cp KafkaOffsetMonitor-assembly-0.2.0.jar \
-     com.quantifind.kafka.offsetapp.OffsetGetterWeb \
-     --zk loaclhost:2181 \
-     --port 8089 \
-     --refresh 10.seconds \
-     --retain 2.days
+### KafkaOffsetMonitor 安装配置
 
-# 可以用 nohup & 启动
-```
+1. 下载     https://github.com/quantifind/KafkaOffsetMonitor/releases/tag/v0.2.0
+
+2. 启动
+
+    ```bash
+    java -cp KafkaOffsetMonitor-assembly-0.2.0.jar \
+            com.quantifind.kafka.offsetapp.OffsetGetterWeb \
+            --zk loaclhost:2181 \
+            --port 8089 \
+            --refre10.seconds \
+            --retain 2.days
+
+    # 可以用 nohup & 启动
+    ```
 
 ### Kafka-manager
 
-1. 下载   https://github.com/yahoo/kafka-manager
+1. 下载     https://github.com/yahoo/kafka-manager
 
 2. 安装配置
 
-```bash 
+    ```bash
 
-# 默认配置java 环境
+    # 默认配置java 环境
 
-git clone https://github.com/yahoo/kafka-manager/releases
+    git clone https://github.com/yahoo/kafka-manager/releases
 
-cd kafka-manager
+    cd kafka-manager
 
-./sbt clean dist
+    ./sbt clean dist
 
-# 命令执行完成后，在 target/universal 目录中会生产一个zip压缩包kafka-manager-1.3.3.7.zip
+    # 命令执行完成后，在 target/universal 目录中会生产一个zip压缩包kafka-manager-1.3.3.7.zip
 
-cd target/universal 
+    cd target/universal 
 
-unzip kafka-manager-1.3.3.7.zip
+    unzip kafka-manager-1.3.3.7.zip
 
 
-# 配置 kafka-manager.zkhosts="localhost:2181"
-vi conf/application.conf
-```
+    # 配置 kafka-manager.zkhosts="localhost:2181"
+    vi conf/application.conf
+    ```
+
 3. 这里如果想看见更多信息需要额外配置
-```bash
 
-# 修改 KAFKA_JMX_OPTS
-vi kafka-run-class.sh
+    ```bash
 
-  KAFKA_JMX_OPTS="-Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false  -Dcom.sun.management.jmxremote.ssl=false"
-  JMX_PORT=9999
+    # 修改 KAFKA_JMX_OPTS
+    vi kafka-run-class.sh
 
-# 添加 JMX_PORT
-vi kafka-server-start.sh
+        KAFKA_JMX_OPTS="-Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false    -Dcom.sun.management.jmxremote.ssl=false"
+        JMX_PORT=9999
 
-export JMX_PORT=${JMX_PORT:-9999
+    # 添加 JMX_PORT
+    vi kafka-server-start.sh
 
-```
+    export JMX_PORT=${JMX_PORT:-9999
 
-4. 启动 
-```bash
-bin/kafka-manager
-# 可以用 nohup & 启动
-```
+    ```
+
+4. 启动
+
+    ```bash
+    bin/kafka-manager
+    # 可以用 nohup & 启动
+    ```

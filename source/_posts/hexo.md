@@ -1,0 +1,117 @@
+---
+title: hexo 教程
+date: 2018-04-28 11:18:40
+tags: 博客搭建
+---
+## hexo 简介
+
+Hexo是高效的静态站点生成框架，它基于Node.js。通过Hexo，你可以直接使用Markdown语法来撰写博客。
+
+## hexo 安装
+
+```bash
+# 全局安装
+npm install hexo-cli -g
+
+# 初始化
+hexo init blog
+
+# 安装项目依赖
+npm install
+
+# 插件安装
+npm install --save hexo-renderer-sass
+
+# 启动本地化服务即可查看项目
+hexo server
+
+# 生成
+hexo g
+
+# 启动本地服务并监听,修改了配置文件还是需要从新生成一遍才可以看到效果
+hexo s --watch
+
+# 如果报一些奇怪的错误不知道怎么解决不妨清除一下重新生成发布
+hexo clean
+
+
+```
+
+## hexo 部署
+
+```bash
+# 部署依赖
+npm install hexo-deployer-git --save
+
+# 部署文件冲突解决
+rm -rf .deploy_git
+hexo g
+hexo d
+```
+
+## ubuntu 安装
+
+### 环境介紹
+
+主机： ubuntu 18.04
+
+### 安裝依賴
+
+``` bash
+sudo apt-get install nodejs
+sudo apt install npm
+sudo apt install git
+npm install -g hexo
+```
+
+### hexo 創建
+
+``` bash
+mkdir hexo_init
+cd hexo_init
+hexo init
+hexo g
+hexo s
+```
+
+登錄 http://localhost:4000  查看效果
+
+### 下載主題
+
+``` bash
+git clone https://github.com/tufu9441/maupassant-hexo.git themes/maupassant
+npm install hexo-renderer-pug --save
+npm install hexo-renderer-sass --save
+```
+
+### 修改yml文件
+
+```yml
+theme: maupassant
+
+deploy:
+  type: git
+  repository: https://github.com/Leo-youngs/Leo-youngs.github.io
+  branch: master
+  message: update
+```
+
+### 生成静态文件
+
+```bash
+hexo generate
+```
+
+更多信息: [Generating](https://hexo.io/docs/generating.html)
+
+### 发布
+
+```bash
+hexo deploy
+```
+
+更多信息: [Deployment](https://hexo.io/docs/deployment.html)
+
+## 主题库
+
+[Themes](https://hexo.io/themes/index.html)
