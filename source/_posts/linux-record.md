@@ -1,7 +1,7 @@
 ---
-title: Linux 使用记录
+title: Code 日常
 date: 2018-05-08 10:07:55
-tags: echo EOF
+tags: bug
 ---
 
 ## 日常问题、小技巧收集

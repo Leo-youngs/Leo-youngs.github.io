@@ -1,5 +1,5 @@
 ---
-title: hexo 教程
+title: Hexo 教程
 date: 2018-04-28 11:18:40
 tags: 博客搭建
 ---

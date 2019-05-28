@@ -1,4 +1,136 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Linux 使用记录 | 帅气的代码</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Linux 使用记录</h1><a id="logo" href="/.">帅气的代码</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Linux 使用记录</h1><div class="post-meta">May 8, 2018</div><div class="post-content"><h2 id="日常问题、小技巧收集"><a href="#日常问题、小技巧收集" class="headerlink" title="日常问题、小技巧收集"></a>日常问题、小技巧收集</h2><p>主要记录日常遇到的问题及解决方法<br>包括但不限于 python/linux/docker/database</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Code 日常 | 👩‍💻的日常
+  </title>
+  <meta name="description" content="日常的自我总结">
+  
+  <meta name="keywords" content="
+  bug
+  ">
+  
+  <meta name="author" content="shuai">
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives" class="header-toolbar-right"> 4 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
+        <a href="/tags" class="header-toolbar-right"> 4 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories" class="header-toolbar-right"> 0 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">👩‍💻的日常</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    shuai
+
+    <span class="post-date float-right" title="{{moment(1525745275000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1525745275000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Code 日常</h1>
+    <h2 id="日常问题、小技巧收集"><a href="#日常问题、小技巧收集" class="headerlink" title="日常问题、小技巧收集"></a>日常问题、小技巧收集</h2><p>主要记录日常遇到的问题及解决方法<br>包括但不限于 python/linux/docker/database</p>
 <h2 id="linux命令终端显示-bash-4-2-解决方法"><a href="#linux命令终端显示-bash-4-2-解决方法" class="headerlink" title="linux命令终端显示-bash-4.2#解决方法"></a>linux命令终端显示-bash-4.2#解决方法</h2><ul>
 <li><p>近期在折腾docker centos 使用别人的镜像 发现终端显示 <code>bash-4.2#</code> 很是忧伤（之前遇到，好记性不如烂笔头）</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里的root 可以替换成你的用户</span></span><br><span class="line">cp /etc/skel/.bashrc /root/  </span><br><span class="line">cp /etc/skel/.bash_profile  /root/</span><br></pre></td></tr></table></figure>
@@ -24,4 +156,42 @@
 </blockquote>
 <h2 id="docker-镜像加速"><a href="#docker-镜像加速" class="headerlink" title="docker 镜像加速"></a>docker 镜像加速</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://etsgrm2s.mirror.aliyuncs.com"</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 
-<h2 id="ubuntu-18-04-安装-mysql-5-7-root-密码"><a href="#ubuntu-18-04-安装-mysql-5-7-root-密码" class="headerlink" title="ubuntu-18.04 安装 mysql-5.7 root 密码"></a>ubuntu-18.04 安装 mysql-5.7 root 密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server mysql-client</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询 默认 用户名 密码</span></span><br><span class="line">sudo vi /etc/mysql/debian.cnf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 登录 mysql 修改 root 密码</span></span><br><span class="line">update mysql.user <span class="built_in">set</span> authentication_string=password(<span class="string">'password'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改远程连接</span></span><br><span class="line">update user <span class="built_in">set</span> host = <span class="string">'%'</span> <span class="built_in">where</span> user = <span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改验证方式</span></span><br><span class="line">UPDATE user SET plugin=<span class="string">'mysql_native_password'</span> WHERE User=<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## option 2</span></span><br><span class="line"></span><br><span class="line">mysql&gt; CREATE USER <span class="string">'YOUR_SYSTEM_USER'</span>@<span class="string">'localhost'</span> IDENTIFIED BY <span class="string">''</span>;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">'YOUR_SYSTEM_USER'</span>@<span class="string">'localhost'</span>;</span><br><span class="line">mysql&gt; UPDATE user SET plugin=<span class="string">'auth_socket'</span> WHERE User=<span class="string">'YOUR_SYSTEM_USER'</span>;</span><br><span class="line">mysql&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure></div><div class="tags"><a href="/tags/echo-EOF/">echo EOF</a></div><div class="post-nav"><a class="pre" href="/2018/05/30/greenplum/">greenplum</a><a class="next" href="/2018/04/28/hexo/">hexo 教程</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://yoursite.com"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/博客搭建/" style="font-size: 15px;">博客搭建</a> <a href="/tags/docker-ubuntu/" style="font-size: 15px;">docker ubuntu</a> <a href="/tags/消息队列-greenplum/" style="font-size: 15px;">消息队列 greenplum</a> <a href="/tags/echo-EOF/" style="font-size: 15px;">echo EOF</a> <a href="/tags/数据仓库-大数据-greenplum/" style="font-size: 15px;">数据仓库 大数据 greenplum</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/kafka/">kafka 安装及配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/greenplum/">greenplum</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/linux-record/">Linux 使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/28/hexo/">hexo 教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/28/first/">平時小問題解決</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">帅气的代码.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<h2 id="ubuntu-18-04-安装-mysql-5-7-root-密码"><a href="#ubuntu-18-04-安装-mysql-5-7-root-密码" class="headerlink" title="ubuntu-18.04 安装 mysql-5.7 root 密码"></a>ubuntu-18.04 安装 mysql-5.7 root 密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server mysql-client</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询 默认 用户名 密码</span></span><br><span class="line">sudo vi /etc/mysql/debian.cnf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 登录 mysql 修改 root 密码</span></span><br><span class="line">update mysql.user <span class="built_in">set</span> authentication_string=password(<span class="string">'password'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改远程连接</span></span><br><span class="line">update user <span class="built_in">set</span> host = <span class="string">'%'</span> <span class="built_in">where</span> user = <span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改验证方式</span></span><br><span class="line">UPDATE user SET plugin=<span class="string">'mysql_native_password'</span> WHERE User=<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## option 2</span></span><br><span class="line"></span><br><span class="line">mysql&gt; CREATE USER <span class="string">'YOUR_SYSTEM_USER'</span>@<span class="string">'localhost'</span> IDENTIFIED BY <span class="string">''</span>;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">'YOUR_SYSTEM_USER'</span>@<span class="string">'localhost'</span>;</span><br><span class="line">mysql&gt; UPDATE user SET plugin=<span class="string">'auth_socket'</span> WHERE User=<span class="string">'YOUR_SYSTEM_USER'</span>;</span><br><span class="line">mysql&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://shuai93.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 shuai</li>
+      <li><a href="https://shuai93.github.io">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

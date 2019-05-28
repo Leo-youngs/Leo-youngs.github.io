@@ -1,10 +1,10 @@
 ---
-title: greenplum
+title: Greenplum
 date: 2018-05-30 10:52:58
-tags: 数据仓库 大数据 greenplum
+tags: 数据仓库
 ---
 
-## 简介
+## 基本介绍
 
 Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库，其数据库引擎层是基于著名的Postgresql数据库，企业级数据库产品，现已开源。Greenplum拥有丰富的特性，包括：
 

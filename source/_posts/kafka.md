@@ -1,7 +1,7 @@
 ---
-title: kafka 安装及配置
+title: Kafka 安装及配置
 date: 2018-05-30 10:52:58
-tags: 消息队列 greenplum 
+tags: 消息队列 
 ---
 
 ## 基本介绍

@@ -1,8 +1,32 @@
-#### 一个来自魔都的小小码农 主要从事python 后端 ，目前的方向是python 数据处理，数据分析（哈哈 有点吹牛，就是小小码农）
-* **联系我**   
-    > 邮箱：youngs@yeah.net
+# 关于我
 
-* 爱好
-    > 徒步 游戏 （吃鸡 LOL 欢迎）
-    
-    > python 相关问题欢迎探讨
+## 基本介绍
+
+一个来自魔都的小码农 主要从事python 后端，大数据处理
+目前的方向是 python 数据挖掘，对机器学习有浓厚兴趣
+
+## 技能标签
+
+* web (django/flask/tornado/sanic)
+
+* databases (mysql/postgresql/mongo)
+
+* big data (hadoop/spark/hdfs/greenplum)
+
+* machine learning (tensorflow/cnn/rnn)
+
+* message queue (kafka/rabbirmq)
+
+## 联系方式
+
+* 邮箱：youngs@yeah.net
+
+## 爱好
+
+* 徒步
+* 游戏 （吃鸡 LOL 王者）
+
+## 其他
+
+* python 相关问题欢迎探讨
+* 数据挖掘 在努力中
