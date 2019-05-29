@@ -12,7 +12,7 @@
   <meta name="description" content="日常的自我总结">
   
   <meta name="keywords" content="
-  bug
+  linux python docker
   ">
   
   <meta name="author" content="shuai">
@@ -73,7 +73,7 @@
           <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
         </li>
         <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></a>
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></a>
         </li>
       </ul>
     </div>
@@ -86,15 +86,15 @@
     <ul class="header-toolbar">
       <li class="clearfix">
         <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 4 </a>
+        <a href="/archives" class="header-toolbar-right"> 5 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 4 </a>
+        <a href="/tags" class="header-toolbar-right"> 5 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
-        <a href="/categories" class="header-toolbar-right"> 0 </a>
+        <a href="/categories" class="header-toolbar-right"> 5 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -157,6 +157,8 @@
 <h2 id="docker-镜像加速"><a href="#docker-镜像加速" class="headerlink" title="docker 镜像加速"></a>docker 镜像加速</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://etsgrm2s.mirror.aliyuncs.com"</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <h2 id="ubuntu-18-04-安装-mysql-5-7-root-密码"><a href="#ubuntu-18-04-安装-mysql-5-7-root-密码" class="headerlink" title="ubuntu-18.04 安装 mysql-5.7 root 密码"></a>ubuntu-18.04 安装 mysql-5.7 root 密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server mysql-client</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询 默认 用户名 密码</span></span><br><span class="line">sudo vi /etc/mysql/debian.cnf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 登录 mysql 修改 root 密码</span></span><br><span class="line">update mysql.user <span class="built_in">set</span> authentication_string=password(<span class="string">'password'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改远程连接</span></span><br><span class="line">update user <span class="built_in">set</span> host = <span class="string">'%'</span> <span class="built_in">where</span> user = <span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改验证方式</span></span><br><span class="line">UPDATE user SET plugin=<span class="string">'mysql_native_password'</span> WHERE User=<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## option 2</span></span><br><span class="line"></span><br><span class="line">mysql&gt; CREATE USER <span class="string">'YOUR_SYSTEM_USER'</span>@<span class="string">'localhost'</span> IDENTIFIED BY <span class="string">''</span>;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">'YOUR_SYSTEM_USER'</span>@<span class="string">'localhost'</span>;</span><br><span class="line">mysql&gt; UPDATE user SET plugin=<span class="string">'auth_socket'</span> WHERE User=<span class="string">'YOUR_SYSTEM_USER'</span>;</span><br><span class="line">mysql&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<h2 id="python-换源以及格式化pip输出"><a href="#python-换源以及格式化pip输出" class="headerlink" title="python 换源以及格式化pip输出"></a>python 换源以及格式化pip输出</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~ &amp; mkdir .pip</span><br><span class="line">vi ~/.pip/pip.conf</span><br><span class="line"></span><br><span class="line">[global]</span><br><span class="line">timeout = 60</span><br><span class="line">index-url = http://pypi.douban.com/simple</span><br><span class="line">trusted-host = pypi.douban.com</span><br><span class="line">format=columns</span><br></pre></td></tr></table></figure>
   </article>
 </div>
 

@@ -1,7 +1,8 @@
 ---
 title: Code 日常
 date: 2018-05-08 10:07:55
-tags: bug
+tags: linux python docker
+categories: bug
 ---
 
 ## 日常问题、小技巧收集
@@ -92,4 +93,18 @@ mysql> CREATE USER 'YOUR_SYSTEM_USER'@'localhost' IDENTIFIED BY '';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'YOUR_SYSTEM_USER'@'localhost';
 mysql> UPDATE user SET plugin='auth_socket' WHERE User='YOUR_SYSTEM_USER';
 mysql> FLUSH PRIVILEGES;
+```
+
+## python 换源以及格式化pip输出
+
+```bash
+
+cd ~ & mkdir .pip
+vi ~/.pip/pip.conf
+
+[global]
+timeout = 60
+index-url = http://pypi.douban.com/simple
+trusted-host = pypi.douban.com
+format=columns
 ```
