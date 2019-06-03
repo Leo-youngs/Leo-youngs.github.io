@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    mxnet_gpu 安装 | 👩‍💻的日常
+    cuda 安装 | 👩‍💻的日常
   </title>
   <meta name="description" content="日常的自我总结">
   
   <meta name="keywords" content="
-  mxnet cuda
+  cuda gpu
   ">
   
   <meta name="author" content="shuai">
@@ -86,15 +86,15 @@
     <ul class="header-toolbar">
       <li class="clearfix">
         <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 7 </a>
+        <a href="/archives" class="header-toolbar-right"> 8 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 7 </a>
+        <a href="/tags" class="header-toolbar-right"> 8 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
-        <a href="/categories" class="header-toolbar-right"> 6 </a>
+        <a href="/categories" class="header-toolbar-right"> 5 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -129,7 +129,7 @@
   </h3>
 
   <article class="post-content">
-    <h1>mxnet_gpu 安装</h1>
+    <h1>cuda 安装</h1>
     <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>CUDA 是并行计算的平台和类C编程模型，我们能很容易的实现并行算法，就像写C代码一样。只要配备的NVIDIA GPU，就可以在许多设备上运行你的并行程序，无论是台式机、笔记本抑或平板电脑。熟悉C语言可以帮助你尽快掌握CUDA。</p>
 <p>cuDNN 是NVIDIA打造的针对深度神经网络的加速库，是一个用于深层神经网络的GPU加速库。如果你要用GPU训练模型，cuDNN不是必须的，但是一般会采用这个加速库。</p>
 <p>MXNet 是灵活且高效的深度学习库，其有点灵活，轻量，国人参与开发，文档齐全。</p>
@@ -164,9 +164,6 @@
 </ul>
 </li>
 </ol>
-<h2 id="ubuntu-安装mxnet"><a href="#ubuntu-安装mxnet" class="headerlink" title="ubuntu 安装mxnet"></a>ubuntu 安装mxnet</h2><p><a href="https://mxnet.incubator.apache.org/versions/master/install/index.html?platform=Linux&language=Python&processor=GPU" target="_blank" rel="noopener">官方文档</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install mxnet-cu90</span><br></pre></td></tr></table></figure>
-
 <h2 id="卸载cuda"><a href="#卸载cuda" class="headerlink" title="卸载cuda"></a>卸载cuda</h2><p><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html#uninstall" target="_blank" rel="noopener">官方文档</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@yixue-pc:/usr/<span class="built_in">local</span>/cuda/bin<span class="comment"># ./cuda-uninstaller</span></span><br></pre></td></tr></table></figure>
 

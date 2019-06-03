@@ -95,16 +95,46 @@ mysql> UPDATE user SET plugin='auth_socket' WHERE User='YOUR_SYSTEM_USER';
 mysql> FLUSH PRIVILEGES;
 ```
 
-## python 换源以及格式化pip输出
+## python 相关bug
 
-```bash
+1. python 换源以及格式化pip输出
 
-cd ~ & mkdir .pip
-vi ~/.pip/pip.conf
+    ```bash
 
-[global]
-timeout = 60
-index-url = http://pypi.douban.com/simple
-trusted-host = pypi.douban.com
-format=columns
-```
+    cd ~ & mkdir .pip
+    vi ~/.pip/pip.conf
+
+    [global]
+    timeout = 60
+    index-url = http://pypi.douban.com/simple
+    trusted-host = pypi.douban.com
+    format=columns
+    ```
+
+2. 在运行 tensorboard 出错
+
+    原因分析：mxnet 要求 numpy 的版本与tensorboard不匹配
+    `mxnet 1.4.1 has requirement numpy<1.15.0,>=1.8.2, but you'll have numpy 1.16.3 which is incompatible.`
+
+    ```bash
+    # 错误详情
+    ➜  tensorflow git:(master) ✗ tensorboard --logdir ./
+    ModuleNotFoundError: No module named 'numpy.core._multiarray_umath'
+    ImportError: numpy.core.multiarray failed to import
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+    File "<frozen importlib._bootstrap>", line 968, in _find_and_load
+    SystemError: <class '_frozen_importlib._ModuleLockManager'> returned a result with an error set
+    ImportError: numpy.core._multiarray_umath failed to import
+    ImportError: numpy.core.umath failed to import
+    2019-06-03 12:42:23.607527: F tensorflow/python/lib/core/bfloat16.cc:675] Check failed: PyBfloat16_Type.tp_base != nullptr
+    [1]    79828 abort      tensorboard --logdir ./
+
+    # 解决
+    pip3 install -U numpy
+
+    # 启动
+    tensorboard --logdir  ./
+    ```
