@@ -42,7 +42,7 @@ categories: bug
     > Hello world
     ```
 
-    EOF是END Of File的缩写,表示自定义终止符.既然自定义,那么EOF就不是固定的,可以随意设置别名,在linux按ctrl-d就代表EOF, 
+    EOF是END Of File的缩写,表示自定义终止符.既然自定义,那么EOF就不是固定的,可以随意设置别名,在linux按ctrl-d就代表EOF
     **EOF一般会配合cat能够多行文本输出.**
 
 ## pyhon matplotlib 安装

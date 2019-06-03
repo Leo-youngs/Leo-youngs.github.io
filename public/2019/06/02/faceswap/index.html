@@ -86,15 +86,15 @@
     <ul class="header-toolbar">
       <li class="clearfix">
         <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 8 </a>
+        <a href="/archives" class="header-toolbar-right"> 9 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 8 </a>
+        <a href="/tags" class="header-toolbar-right"> 9 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
-        <a href="/categories" class="header-toolbar-right"> 5 </a>
+        <a href="/categories" class="header-toolbar-right"> 6 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -134,7 +134,7 @@
 <p><a href="https://github.com/deepfakes/faceswap" target="_blank" rel="noopener">github 地址</a></p>
 <p><a href="https://github.com/deepfakes/faceswap/blob/master/USAGE.md" target="_blank" rel="noopener">github 教程</a></p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ol>
-<li><p>cuda 环境 (详情见另一博客 -&gt; <a href="https://shuai93.github.io/2019/05/28/mxnet-gpu/">cuda/cudnn 安装</a>)</p>
+<li><p>cuda 环境 (详情见另一博客 -&gt; <a href="https://shuai93.github.io/2019/05/28/cuda/">cuda/cudnn 安装</a>)</p>
 </li>
 <li><p>tensorflow-gpu 准备</p>
 <p> <a href="https://tensorflow.google.cn/install/source" target="_blank" rel="noopener">linux tensorflwo版本对应</a></p>
@@ -148,17 +148,20 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提取视频中的人脸数据</span></span><br><span class="line">python faceswap.py extract -i ./faces/demo_2_2018_smw_drsp.mp4  -o ./faces/demo</span><br><span class="line"></span><br><span class="line">python faceswap.py extract -i ./faces/cutout.mp4 -o ./faces/lhy</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>训练模型</p>
+<p> 训练数据只需要上一步提取到的人脸数据</p>
 <p> 一般用cpu训练需要数周, gpu训练需要 12-48 小时, 当loss下降到0.015一下才能有所效果</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python faceswap.py train -A ./faces/demo/ -B ./faces/ll/ -m ./demo_ll_model</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用模型生成换脸图</p>
+<p> ffmpeg 分解视频成图片数据然后使用模型替换图片中人脸数据</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用训练数据替换</span></span><br><span class="line">python faceswap.py convert -i ./faces/demo -o ./faces/converted/ -m ./demo_ll_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用原始视频数据替换 （先用ffmpeg将视频分解为每一帧图片数据）</span></span><br><span class="line">ffmpeg -i ./faces/demo_2_2018_smw_drsp.mp4 ./faces/demo_output/video-frame-%d.png</span><br><span class="line"></span><br><span class="line">python faceswap.py convert -i ./faces/demo_output/ -o ./faces/demo_converted/ -m ./demo_ll_model</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>分解视频音频并将合成后的视频与音频合并</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分解视频 音频</span></span><br><span class="line">ffmpeg -i demo_2_2018_smw_drsp.mp4 -vn -y -acodec copy 3.aac</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换脸后的图片合成视频</span></span><br><span class="line">ffmpeg -i ./faces/demo_converted/video-frame-%0d.png -c:v libx264 -vf <span class="string">"fps=25,format=yuv420p"</span> lz_demo.mp4</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用 tensorboard 查看网络结构以及训练过程</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开log文件</span></span><br><span class="line">tensorboard --logdir ./demo_ll_model/</span><br><span class="line"></span><br><span class="line">TensorBoard 1.12.2 at http://yixue-pc:6006 (Press CTRL+C to quit)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器打开就可以观看了</span></span><br></pre></td></tr></table></figure>
+<p> 这里能够看到整个faceswap的网络结构以及训练的收敛速度</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开log文件</span></span><br><span class="line">tensorboard --logdir ./demo_ll_model/</span><br><span class="line"></span><br><span class="line">TensorBoard 1.12.2 at http://yixue-pc:6006 (Press CTRL+C to quit)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器打开就可以观看了 这里只能看到序列</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
