@@ -86,11 +86,11 @@
     <ul class="header-toolbar">
       <li class="clearfix">
         <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 9 </a>
+        <a href="/archives" class="header-toolbar-right"> 10 </a>
       </li>
       <li>
         <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 9 </a>
+        <a href="/tags" class="header-toolbar-right"> 10 </a>
       </li>
       <li>
         <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
@@ -157,7 +157,7 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用训练数据替换</span></span><br><span class="line">python faceswap.py convert -i ./faces/demo -o ./faces/converted/ -m ./demo_ll_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用原始视频数据替换 （先用ffmpeg将视频分解为每一帧图片数据）</span></span><br><span class="line">ffmpeg -i ./faces/demo_2_2018_smw_drsp.mp4 ./faces/demo_output/video-frame-%d.png</span><br><span class="line"></span><br><span class="line">python faceswap.py convert -i ./faces/demo_output/ -o ./faces/demo_converted/ -m ./demo_ll_model</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>分解视频音频并将合成后的视频与音频合并</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分解视频 音频</span></span><br><span class="line">ffmpeg -i demo_2_2018_smw_drsp.mp4 -vn -y -acodec copy 3.aac</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换脸后的图片合成视频</span></span><br><span class="line">ffmpeg -i ./faces/demo_converted/video-frame-%0d.png -c:v libx264 -vf <span class="string">"fps=25,format=yuv420p"</span> lz_demo.mp4</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分解视频 音频</span></span><br><span class="line">ffmpeg -i demo_2_2018_smw_drsp.mp4 -vn -y -acodec copy 3.aac</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换脸后的图片合成视频</span></span><br><span class="line">ffmpeg -i ./faces/demo_converted/video-frame-%0d.png -c:v libx264 -vf <span class="string">"fps=25,format=yuv420p"</span> lz_demo.mp4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合成音频与视频</span></span><br><span class="line">ffmpeg -i 1.mp4 -i 1.aac -c:v copy -c:a aac -strict experimental 1_yzx.mp4</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用 tensorboard 查看网络结构以及训练过程</p>
 <p> 这里能够看到整个faceswap的网络结构以及训练的收敛速度</p>
@@ -165,7 +165,16 @@
 
 </li>
 </ol>
-<h2 id="其他工具简介"><a href="#其他工具简介" class="headerlink" title="其他工具简介"></a>其他工具简介</h2><h3 id="ffmpeg-安装"><a href="#ffmpeg-安装" class="headerlink" title="ffmpeg 安装"></a>ffmpeg 安装</h3><ol>
+<h2 id="其他工具简介"><a href="#其他工具简介" class="headerlink" title="其他工具简介"></a>其他工具简介</h2><h3 id="you-get-视频下载工具"><a href="#you-get-视频下载工具" class="headerlink" title="you-get 视频下载工具"></a>you-get 视频下载工具</h3><ol>
+<li><p>安装</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install you-get</span><br><span class="line"></span><br><span class="line">brew install youtube-dl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用详解</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看视频的信息以及可选格式</span></span><br><span class="line">youtube-dl -F https://v.youku.com/v_show/id_XMzg0NjMzMjg2OA\=\=.html\?spm\=a2h0k.11417342.soresults.dtitle</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载 -F返回的具体格式视频</span></span><br><span class="line">youtube-dl -f 3  https://v.youku.com/v_show/id_XMzg0NjMzMjg2OA\=\=.html\?spm\=a2h0k.11417342.soresults.dtitle</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="ffmpeg-视频处理工具"><a href="#ffmpeg-视频处理工具" class="headerlink" title="ffmpeg 视频处理工具"></a>ffmpeg 视频处理工具</h3><ol>
 <li><p>安装</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mac 安装</span></span><br><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
 </li>

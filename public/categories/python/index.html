@@ -145,17 +145,49 @@
     <li class>
       <a href="/">Overview</a></li>
     <li class>
-      <a href="/archives">Posts <span class="counter">9</span></a>
+      <a href="/archives">Posts <span class="counter">10</span></a>
     </li>
     <li class="selected">
       <a href="/categories">Categories <span class="counter">6</span></a></li>
     <li class>
-      <a href="/tags">Tags <span class="counter">9</span></a></li>
+      <a href="/tags">Tags <span class="counter">10</span></a></li>
   </ul>
 </nav>
 
     <div class="body-secondary">
       <ul class="archive-list">
+        
+        <li class="archive-list-item">
+          <h2><a href="/2019/06/10/tornado-process/">tornado_process</a></h2>
+          <p>
+               tornado中使用多进程处理任务  在最近的工作中遇到需要在服务中有重cpu计算的任务 
+ 现有两种方案选择 
+ 
+  celery 实现分布式计算 
+ 
+  程序内部实现多进程消费 
+ 
+ 
+ 考虑到轻量级以及响应速度选着后者 
+ 原因如下: 
+ 
+  该项目中需要传输数据较大，celer...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/tornado-web/">tornado web</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/python/"><i class="fa fa-folder-open"></i> python</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1560097132000).fromNow()}}</span>
+          </div>
+        </li>
         
         <li class="archive-list-item">
           <h2><a href="/2019/06/03/py-setup/">py_setup</a></h2>

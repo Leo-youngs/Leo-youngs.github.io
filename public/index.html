@@ -145,18 +145,39 @@
     <li class="selected">
       <a href="/">Overview</a></li>
     <li class>
-      <a href="/archives">Posts <span class="counter">9</span></a>
+      <a href="/archives">Posts <span class="counter">10</span></a>
     </li>
     <li class>
       <a href="/categories">Categories <span class="counter">6</span></a></li>
     <li class>
-      <a href="/tags">Tags <span class="counter">9</span></a></li>
+      <a href="/tags">Tags <span class="counter">10</span></a></li>
   </ul>
 </nav>
 
     <div class="body-secondary">
       <p class="right-title">Recent post</p>
       <ul class="recent-post clearfix">
+        
+        <li class="recent-post-item">
+          <div class="clearfix">
+            <h5 class="post-title text-ellipsis">
+              <i class="fa fa-bars"></i>
+              <a href="/2019/06/10/tornado-process/">tornado_process</a>
+            </h5>
+            <p class="post-description text-ellipsis desktop-only">
+                 tornado中使用多进程处理任务  在最近的工作中遇到需要在服务中有重cpu计算的任务 
+ 
+            </p>
+            <p class="post-info desktop-only">
+              <span>
+                
+                  <a class="category-link" href="/categories/python/"><i class="fa fa-folder-open"></i> python</a>
+                
+              </span>
+              <span><i class="fa fa-tag"></i> 1 </span>
+            </p>
+          </div>
+        </li>
         
         <li class="recent-post-item">
           <div class="clearfix">
@@ -261,26 +282,6 @@
           </div>
         </li>
         
-        <li class="recent-post-item">
-          <div class="clearfix">
-            <h5 class="post-title text-ellipsis">
-              <i class="fa fa-bars"></i>
-              <a href="/2018/05/30/kafka/">Kafka 安装及配置</a>
-            </h5>
-            <p class="post-description text-ellipsis desktop-only">
-                 基本介绍  kafka是一个分布式消息队列。具有高性能、持久化、多副本备份、横向扩展能力。生产
-            </p>
-            <p class="post-info desktop-only">
-              <span>
-                
-                  <a class="category-link" href="/categories/教程/"><i class="fa fa-folder-open"></i> 教程</a>
-                
-              </span>
-              <span><i class="fa fa-tag"></i> 1 </span>
-            </p>
-          </div>
-        </li>
-        
       </ul>
       <div class="calendar-container" id="calendar">
   <div class="calendar">
@@ -350,7 +351,7 @@
 
 
 <script>
-  var posts = [{"date":"2019-05-28","title":"cuda 安装","url":"https://shuai93.github.io/2019/05/28/cuda/"},{"date":"2019-05-30","title":"jupyter 安装部署","url":"https://shuai93.github.io/2019/05/30/jupyter/"},{"date":"2019-06-02","title":"faceswap","url":"https://shuai93.github.io/2019/06/02/faceswap/"},{"date":"2019-06-03","title":"mxnet/tensorflow/pytorch 安装","url":"https://shuai93.github.io/2019/06/03/mxnet/"},{"date":"2019-06-03","title":"py_setup","url":"https://shuai93.github.io/2019/06/03/py-setup/"}];
+  var posts = [{"date":"2019-05-28","title":"cuda 安装","url":"https://shuai93.github.io/2019/05/28/cuda/"},{"date":"2019-05-30","title":"jupyter 安装部署","url":"https://shuai93.github.io/2019/05/30/jupyter/"},{"date":"2019-06-02","title":"faceswap","url":"https://shuai93.github.io/2019/06/02/faceswap/"},{"date":"2019-06-03","title":"py_setup","url":"https://shuai93.github.io/2019/06/03/py-setup/"},{"date":"2019-06-03","title":"mxnet/tensorflow/pytorch 安装","url":"https://shuai93.github.io/2019/06/03/mxnet/"},{"date":"2019-06-10","title":"tornado_process","url":"https://shuai93.github.io/2019/06/10/tornado-process/"}];
   var today = moment().format('YYYY-MM-DD');
   var oneYearAgo = moment(today).subtract(1, 'years');
   posts = posts.filter(function(post) {

@@ -145,17 +145,49 @@
     <li class>
       <a href="/">Overview</a></li>
     <li class="selected">
-      <a href="/archives">Posts <span class="counter">9</span></a>
+      <a href="/archives">Posts <span class="counter">10</span></a>
     </li>
     <li class>
       <a href="/categories">Categories <span class="counter">6</span></a></li>
     <li class>
-      <a href="/tags">Tags <span class="counter">9</span></a></li>
+      <a href="/tags">Tags <span class="counter">10</span></a></li>
   </ul>
 </nav>
 
     <div class="body-secondary">
       <ul class="archive-list">
+        
+        <li class="archive-list-item">
+          <h2><a href="/2019/06/10/tornado-process/">tornado_process</a></h2>
+          <p>
+               tornado中使用多进程处理任务  在最近的工作中遇到需要在服务中有重cpu计算的任务 
+ 现有两种方案选择 
+ 
+  celery 实现分布式计算 
+ 
+  程序内部实现多进程消费 
+ 
+ 
+ 考虑到轻量级以及响应速度选着后者 
+ 原因如下: 
+ 
+  该项目中需要传输数据较大，celer...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/tornado-web/">tornado web</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/python/"><i class="fa fa-folder-open"></i> python</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1560097132000).fromNow()}}</span>
+          </div>
+        </li>
         
         <li class="archive-list-item">
           <h2><a href="/2019/06/03/py-setup/">py_setup</a></h2>
@@ -283,6 +315,29 @@
         </li>
         
         <li class="archive-list-item">
+          <h2><a href="/2018/05/30/greenplum/">Greenplum</a></h2>
+          <p>
+               基本介绍  Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库，其数据库引擎层是基于著名的Postgresql数据库，企业级数据库产品，现已开源。Greenplum拥有丰富的特性，包括： 
+ 
+ 完全支持ANSI SQL 2008标准和SQL OLAP 2003 扩展，支持O...
+          </p>
+          <ul class="tag-list clearfix">
+            
+            <li class="tag-list-item"><a href="/tags/数据仓库-教程/">数据仓库 教程</a></li>
+            
+          </ul>
+          <div class="post-info">
+            <span>
+              
+              <a class="category-link" href="/categories/data-warehouse/"><i class="fa fa-folder-open"></i> data warehouse</a>
+              
+            </span>
+            <span><i class="fa fa-tag"></i> 1 </span>
+            <span>Published {{moment(1527648778000).fromNow()}}</span>
+          </div>
+        </li>
+        
+        <li class="archive-list-item">
           <h2><a href="/2018/05/30/kafka/">Kafka 安装及配置</a></h2>
           <p>
                基本介绍  kafka是一个分布式消息队列。具有高性能、持久化、多副本备份、横向扩展能力。生产者往队列里写消息， 消费者从队列里取消息进行业务逻辑。一般在架构设计中起到解耦、削峰、异步处理的作用。 
@@ -300,29 +355,6 @@
             <span>
               
               <a class="category-link" href="/categories/教程/"><i class="fa fa-folder-open"></i> 教程</a>
-              
-            </span>
-            <span><i class="fa fa-tag"></i> 1 </span>
-            <span>Published {{moment(1527648778000).fromNow()}}</span>
-          </div>
-        </li>
-        
-        <li class="archive-list-item">
-          <h2><a href="/2018/05/30/greenplum/">Greenplum</a></h2>
-          <p>
-               基本介绍  Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库，其数据库引擎层是基于著名的Postgresql数据库，企业级数据库产品，现已开源。Greenplum拥有丰富的特性，包括： 
- 
- 完全支持ANSI SQL 2008标准和SQL OLAP 2003 扩展，支持O...
-          </p>
-          <ul class="tag-list clearfix">
-            
-            <li class="tag-list-item"><a href="/tags/数据仓库-教程/">数据仓库 教程</a></li>
-            
-          </ul>
-          <div class="post-info">
-            <span>
-              
-              <a class="category-link" href="/categories/data-warehouse/"><i class="fa fa-folder-open"></i> data warehouse</a>
               
             </span>
             <span><i class="fa fa-tag"></i> 1 </span>
@@ -357,7 +389,8 @@
           <h2><a href="/2018/04/28/hexo/">Hexo 教程</a></h2>
           <p>
                hexo 简介  Hexo是高效的静态站点生成框架，它基于Node.js。通过Hexo，你可以直接使用Markdown语法来撰写博客。 
-   hexo 安装       1   2   3   4   5   6   7   8   9   10   11   12   13   14   ...
+  官网 中文  
+   hexo 安装       1   2   3   4   5   6   7   8   9   10   11   12   ...
           </p>
           <ul class="tag-list clearfix">
             
