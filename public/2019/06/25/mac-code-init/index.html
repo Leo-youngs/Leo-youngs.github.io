@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    mac coding | 👩‍💻的日常
+  </title>
+  <meta name="description" content="日常的自我总结">
+  
+  <meta name="keywords" content="
+  
+  ">
+  
+  <meta name="author" content="shuai">
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives" class="header-toolbar-right"> 12 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
+        <a href="/tags" class="header-toolbar-right"> 11 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories" class="header-toolbar-right"> 7 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">👩‍💻的日常</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    shuai
+
+    <span class="post-date float-right" title="{{moment(1561470651000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1561470651000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>mac coding</h1>
+    <h2 id="Mac-环境下配置开发环境"><a href="#Mac-环境下配置开发环境" class="headerlink" title="Mac 环境下配置开发环境"></a>Mac 环境下配置开发环境</h2><p>记录Mac日常coding中部分软件的安装<br>主要是记录经常使用以及需要破解的软件</p>
+<h2 id="安装brew"><a href="#安装brew" class="headerlink" title="安装brew"></a>安装brew</h2><p><a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">brew 中文官网</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install python3</span><br><span class="line"></span><br><span class="line">python3 -V</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用增强的 homebrew</span></span><br><span class="line">brew tap caskroom/versions</span><br><span class="line"></span><br><span class="line">brew cask install java8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">brew cask uninstall java8</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-Navicat-Premium-Mac"><a href="#安装-Navicat-Premium-Mac" class="headerlink" title="安装 Navicat Premium Mac"></a>安装 Navicat Premium Mac</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>进入<a href="http://www.navicat.com.cn/products" target="_blank" rel="noopener">官网</a>点击免费使用</li>
+<li>找到对应的Mac 版本点击下载</li>
+</ol>
+<h3 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h3><ol>
+<li><p>下载DoubleLabyrinth/navicat-keygen <a href="https://github.com/DoubleLabyrinth/navicat-keygen" target="_blank" rel="noopener">github地址</a> release -&gt; mac</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b mac https://github.com/DoubleLabyrinth/navicat-keygen.git</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> navicat-keygen</span><br><span class="line"></span><br><span class="line">make all</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成激活码</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> bin</span><br><span class="line"></span><br><span class="line">./navicat-patcher /Applications/Navicat\ Premium.app/Contents/MacOS/Navicat\ Premium</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 打开钥匙串新建 navicat 并总是信任</span></span><br><span class="line"></span><br><span class="line">codesign -f -s <span class="string">"foobar"</span> /Applications/Navicat\ Premium.app/</span><br><span class="line"></span><br><span class="line"><span class="comment">## 选择版本并输入相关信息</span></span><br><span class="line">./navicat-keygen ./RegPrivateKey.pem</span><br><span class="line"></span><br><span class="line"><span class="comment">## 打开navicat 点击注册 填入上一步注册码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 断网选择离线激活，复制请求码，继续key-gen ,回车 回车 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 不出意外获得激活码</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>激活成功</p>
+</li>
+</ol>
+<h2 id="安装IntelliJ-IDEA"><a href="#安装IntelliJ-IDEA" class="headerlink" title="安装IntelliJ IDEA"></a>安装IntelliJ IDEA</h2><ol>
+<li><p>下载<a href="https://www.jetbrains.com/idea/download/#section=mac" target="_blank" rel="noopener">官网</a></p>
+</li>
+<li><p>激活  -&gt; <a href="http://idea.lanyus.com/" target="_blank" rel="noopener">激活文档</a></p>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://shuai93.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 shuai</li>
+      <li><a href="https://shuai93.github.io">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
