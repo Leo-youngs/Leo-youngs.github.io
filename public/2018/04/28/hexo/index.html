@@ -2,10 +2,11 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
     Hexo 教程 | 👩‍💻的日常
   </title>
@@ -17,7 +18,7 @@
   
   <meta name="author" content="shuai">
 
-  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="theme-color" content="#1e2327">
   <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
@@ -25,7 +26,8 @@
 
   <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 
   
@@ -73,7 +75,7 @@
           <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
         </li>
         <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></a>
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
         </li>
       </ul>
     </div>
@@ -85,16 +87,22 @@
   <div class="container header-site-detail">
     <ul class="header-toolbar">
       <li class="clearfix">
-        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 12 </a>
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 14 </a>
       </li>
       <li>
-        <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 11 </a>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 12 </a>
       </li>
       <li>
-        <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
-        <a href="/categories" class="header-toolbar-right"> 7 </a>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 8 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -144,7 +152,7 @@
 <p>登錄 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>  查看效果</p>
 <h3 id="下載主題"><a href="#下載主題" class="headerlink" title="下載主題"></a>下載主題</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tufu9441/maupassant-hexo.git themes/maupassant</span><br><span class="line">npm install hexo-renderer-pug --save</span><br><span class="line">npm install hexo-renderer-sass --save</span><br></pre></td></tr></table></figure>
 
-<h3 id="修改yml文件"><a href="#修改yml文件" class="headerlink" title="修改yml文件"></a>修改yml文件</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">maupassant</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/Leo-youngs/Leo-youngs.github.io</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br><span class="line"><span class="attr">  message:</span> <span class="string">update</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改yml文件"><a href="#修改yml文件" class="headerlink" title="修改yml文件"></a>修改yml文件</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">maupassant</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/Leo-youngs/Leo-youngs.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">update</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
 

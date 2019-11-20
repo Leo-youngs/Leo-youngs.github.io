@@ -2,10 +2,11 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
     Code 日常 | 👩‍💻的日常
   </title>
@@ -17,7 +18,7 @@
   
   <meta name="author" content="shuai">
 
-  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="theme-color" content="#1e2327">
   <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
@@ -25,7 +26,8 @@
 
   <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 
   
@@ -73,7 +75,7 @@
           <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
         </li>
         <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></a>
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
         </li>
       </ul>
     </div>
@@ -85,16 +87,22 @@
   <div class="container header-site-detail">
     <ul class="header-toolbar">
       <li class="clearfix">
-        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 12 </a>
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 14 </a>
       </li>
       <li>
-        <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 11 </a>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 12 </a>
       </li>
       <li>
-        <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
-        <a href="/categories" class="header-toolbar-right"> 7 </a>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 8 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -165,7 +173,6 @@
 <li><p>在运行 tensorboard 出错</p>
 <p> 原因分析：mxnet 要求 numpy 的版本与tensorboard不匹配<br> <code>mxnet 1.4.1 has requirement numpy&lt;1.15.0,&gt;=1.8.2, but you&#39;ll have numpy 1.16.3 which is incompatible.</code></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 错误详情</span></span><br><span class="line">➜  tensorflow git:(master) ✗ tensorboard --logdir ./</span><br><span class="line">ModuleNotFoundError: No module named <span class="string">'numpy.core._multiarray_umath'</span></span><br><span class="line">ImportError: numpy.core.multiarray failed to import</span><br><span class="line"></span><br><span class="line">The above exception was the direct cause of the following exception:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File <span class="string">"&lt;frozen importlib._bootstrap&gt;"</span>, line 968, <span class="keyword">in</span> _find_and_load</span><br><span class="line">SystemError: &lt;class <span class="string">'_frozen_importlib._ModuleLockManager'</span>&gt; returned a result with an error <span class="built_in">set</span></span><br><span class="line">ImportError: numpy.core._multiarray_umath failed to import</span><br><span class="line">ImportError: numpy.core.umath failed to import</span><br><span class="line">2019-06-03 12:42:23.607527: F tensorflow/python/lib/core/bfloat16.cc:675] Check failed: PyBfloat16_Type.tp_base != nullptr</span><br><span class="line">[1]    79828 abort      tensorboard --logdir ./</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解决</span></span><br><span class="line">pip3 install -U numpy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">tensorboard --logdir  ./</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 

@@ -2,10 +2,11 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
     mxnet/tensorflow/pytorch 安装 | 👩‍💻的日常
   </title>
@@ -17,7 +18,7 @@
   
   <meta name="author" content="shuai">
 
-  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="theme-color" content="#1e2327">
   <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
@@ -25,7 +26,8 @@
 
   <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 
   
@@ -73,7 +75,7 @@
           <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
         </li>
         <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></a>
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
         </li>
       </ul>
     </div>
@@ -85,16 +87,22 @@
   <div class="container header-site-detail">
     <ul class="header-toolbar">
       <li class="clearfix">
-        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 12 </a>
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 14 </a>
       </li>
       <li>
-        <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 11 </a>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 12 </a>
       </li>
       <li>
-        <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
-        <a href="/categories" class="header-toolbar-right"> 7 </a>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 8 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -139,8 +147,7 @@
 <p>在安装mxnet/tensorflow/pytorch <strong>一定要注意cuda版本的对应关系</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 安装mxnet 默认是 CPU</span></span><br><span class="line">pip3 install mxnet</span><br><span class="line"></span><br><span class="line"><span class="comment">## ubuntu 安装mxnet GPU</span></span><br><span class="line">pip3 install mxnet-cu90</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 pytorch GPU</span></span><br><span class="line">pip3 install torch torchvision</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 tensorflow GPU</span></span><br><span class="line">pip install tensorflow_gpu==1.12.0</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 验证 torch GPU</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证 mxnet GPU</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mxnet <span class="keyword">as</span> mx</span><br><span class="line"><span class="keyword">from</span> mxnet <span class="keyword">import</span> nd</span><br><span class="line"><span class="keyword">from</span> mxnet.gluon <span class="keyword">import</span> nn</span><br><span class="line">a = nd.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], ctx=mx.gpu())</span><br><span class="line">printa(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证 tensorflow gpu</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/cpu:0'</span>):</span><br><span class="line">    a = tf.constant([<span class="number">1.0</span>,<span class="number">2.0</span>,<span class="number">3.0</span>],shape=[<span class="number">3</span>],name=<span class="string">'a'</span>)</span><br><span class="line">    b = tf.constant([<span class="number">1.0</span>,<span class="number">2.0</span>,<span class="number">3.0</span>],shape=[<span class="number">3</span>],name=<span class="string">'b'</span>)</span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/gpu:1'</span>):</span><br><span class="line">    c = a+b</span><br><span class="line"></span><br><span class="line">sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=<span class="keyword">True</span>,log_device_placement=<span class="keyword">True</span>))</span><br><span class="line"><span class="comment">#sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))</span></span><br><span class="line">sess.run(tf.global_variables_initializer())</span><br><span class="line">print(sess.run(c))</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 验证 torch GPU</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">torch.cuda.is_available()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证 mxnet GPU</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mxnet <span class="keyword">as</span> mx</span><br><span class="line"><span class="keyword">from</span> mxnet <span class="keyword">import</span> nd</span><br><span class="line"><span class="keyword">from</span> mxnet.gluon <span class="keyword">import</span> nn</span><br><span class="line">a = nd.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], ctx=mx.gpu())</span><br><span class="line">printa(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证 tensorflow gpu</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/cpu:0'</span>):</span><br><span class="line">    a = tf.constant([<span class="number">1.0</span>,<span class="number">2.0</span>,<span class="number">3.0</span>],shape=[<span class="number">3</span>],name=<span class="string">'a'</span>)</span><br><span class="line">    b = tf.constant([<span class="number">1.0</span>,<span class="number">2.0</span>,<span class="number">3.0</span>],shape=[<span class="number">3</span>],name=<span class="string">'b'</span>)</span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/gpu:1'</span>):</span><br><span class="line">    c = a+b</span><br><span class="line"></span><br><span class="line">sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=<span class="literal">True</span>,log_device_placement=<span class="literal">True</span>))</span><br><span class="line"><span class="comment">#sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))</span></span><br><span class="line">sess.run(tf.global_variables_initializer())</span><br><span class="line">print(sess.run(c))</span><br></pre></td></tr></table></figure>
 
   </article>
 </div>

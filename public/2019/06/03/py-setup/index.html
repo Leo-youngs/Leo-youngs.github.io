@@ -2,10 +2,11 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
     py_setup | 👩‍💻的日常
   </title>
@@ -17,7 +18,7 @@
   
   <meta name="author" content="shuai">
 
-  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <meta name="theme-color" content="#1e2327">
   <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
@@ -25,7 +26,8 @@
 
   <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
 
   
@@ -73,7 +75,7 @@
           <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
         </li>
         <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></a>
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
         </li>
       </ul>
     </div>
@@ -85,16 +87,22 @@
   <div class="container header-site-detail">
     <ul class="header-toolbar">
       <li class="clearfix">
-        <a href="/archives" class="header-toolbar-left"><i class="fa fa-file-text"></i> Posts </a>
-        <a href="/archives" class="header-toolbar-right"> 12 </a>
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 14 </a>
       </li>
       <li>
-        <a href="/tags" class="header-toolbar-left"><i class="fa fa-tags"></i> Tags </a>
-        <a href="/tags" class="header-toolbar-right"> 11 </a>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 12 </a>
       </li>
       <li>
-        <a href="/categories" class="header-toolbar-left"><i class="fa fa-folder-open"></i> Categories </a>
-        <a href="/categories" class="header-toolbar-right"> 7 </a>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 8 </a>
       </li>
     </ul>
     <h2 class="header-title">
@@ -164,7 +172,6 @@
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译</span></span><br><span class="line">python3 setup.py build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">python3 setup.py install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 制作分发包</span></span><br><span class="line">python3 setup.py sdist</span><br></pre></td></tr></table></figure>
 
 <h2 id="setup-配置实例"><a href="#setup-配置实例" class="headerlink" title="setup 配置实例"></a>setup 配置实例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import re</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line">from setuptools import find_packages, setup</span><br><span class="line"></span><br><span class="line">_version_re = re.compile(r<span class="string">'__version__\s+=\s+(.*)'</span>)</span><br><span class="line"></span><br><span class="line">PY_VER = sys.version_info</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> PY_VER &lt; (3, 6):</span><br><span class="line">    raise RuntimeError(<span class="string">"pks doesn't support Python version prior 3.6"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def read_version():</span><br><span class="line">    regexp = re.compile(r<span class="string">"^__version__\W*=\W*'([\d.abrc]+)'"</span>)</span><br><span class="line">    init_py = os.path.join(os.path.dirname(__file__), <span class="string">'pks'</span>, <span class="string">'__init__.py'</span>)</span><br><span class="line">    with open(init_py) as f:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">            match = regexp.match(line)</span><br><span class="line">            <span class="keyword">if</span> match is not None:</span><br><span class="line">                <span class="built_in">return</span> match.group(1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def <span class="built_in">read</span>(file_name):</span><br><span class="line">    with open(os.path.join(os.path.dirname(__file__), file_name), encoding=<span class="string">'utf-8'</span>) as f:</span><br><span class="line">        <span class="built_in">return</span> f.read()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">'pks'</span>,</span><br><span class="line">    version=read_version(),</span><br><span class="line">    author=<span class="string">'yixue'</span>,</span><br><span class="line">    description=<span class="string">"Async Python 3.6+ web scraping micro-framework based on asyncio."</span>,</span><br><span class="line">    long_description=<span class="built_in">read</span>(<span class="string">'README.md'</span>),</span><br><span class="line">    long_description_content_type=<span class="string">'text/markdown'</span>,</span><br><span class="line">    author_email=<span class="string">'*@songshuai.cn'</span>,</span><br><span class="line">    python_requires=<span class="string">'&gt;=3.6'</span>,</span><br><span class="line">    install_requires=[<span class="string">'pandas'</span>],</span><br><span class="line">    packages=find_packages(),</span><br><span class="line">    classifiers=[</span><br><span class="line">        <span class="string">"Operating System :: POSIX :: Linux"</span>,</span><br><span class="line">    ],</span><br><span class="line">    project_urls=&#123;</span><br><span class="line">        <span class="string">'Source'</span>: <span class="string">'hhttp://gitlab.yx/dw/pks'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    package_data = &#123;<span class="string">'pks'</span>: [<span class="string">'resources/*.csv'</span>],&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
 
   </article>
 </div>
