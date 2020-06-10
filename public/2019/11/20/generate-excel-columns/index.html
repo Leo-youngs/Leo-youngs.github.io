@@ -8,7 +8,7 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>
-    generate_excel_columns | 👩‍💻的日常
+    generate_excel_columns | 👨‍💻‍的日常
   </title>
   <meta name="description" content="日常的自我总结">
   
@@ -107,7 +107,7 @@
     </ul>
     <h2 class="header-title">
       <i class="fa fa-book text-muted"></i>
-      <a href="/">👩‍💻的日常</a>
+      <a href="/">👨‍💻‍的日常</a>
       
       
     </h2>
@@ -148,6 +148,16 @@
 </li>
 </ol>
 <h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ColIdxToXlName</span><span class="params">(idx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> idx &lt; <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">"Index is too small"</span>)</span><br><span class="line">    result = <span class="string">""</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> idx &gt; <span class="number">26</span>:</span><br><span class="line">            idx, r = divmod(idx - <span class="number">1</span>, <span class="number">26</span>)</span><br><span class="line">            print(idx, r)</span><br><span class="line">            result = chr(r + ord(<span class="string">'A'</span>)) + result</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> chr(idx + ord(<span class="string">'A'</span>) - <span class="number">1</span>) + result</span><br><span class="line">        print(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(ColIdxToXlName(<span class="number">677</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ol>
+<li><p>开始写代码的时候天真的以为只是简单的进制转换，直到出问题才细致观察</p>
+</li>
+<li><p>一定要多测试多观察找出规律</p>
+</li>
+<li><p>开始实现是字典存储数字与字母的映射关系，巧用 ascii 码可能代码更加简单</p>
+</li>
+</ol>
+
   </article>
 </div>
 

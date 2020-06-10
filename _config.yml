@@ -97,6 +97,6 @@ avatar: https://octodex.github.com/images/baracktocat.jpg?v=4&s=460
 
 deploy: 
   type: git
-  repository: git@github.com:shuai93
+  repository: git@github.com:shuai93/shuai93.github.io.git
   branch: master
   message: update
