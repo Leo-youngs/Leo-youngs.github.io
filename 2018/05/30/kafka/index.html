@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    Kafka 安装及配置 | 👨‍💻‍的日常
+  </title>
+  <meta name="description" content="日常的自我总结">
+  
+  <meta name="keywords" content="
+  消息队列
+  ">
+  
+  <meta name="author" content="shuai">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 16 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 4 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">👨‍💻‍的日常</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    shuai
+
+    <span class="post-date float-right" title="{{moment(1527648778000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1527648778000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>Kafka 安装及配置</h1>
+    <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>kafka是一个分布式消息队列。具有高性能、持久化、多副本备份、横向扩展能力。生产者往队列里写消息，<br>消费者从队列里取消息进行业务逻辑。一般在架构设计中起到解耦、削峰、异步处理的作用。</p>
+<h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><ul>
+<li>系统： Ubuntu 18.04</li>
+</ul>
+<h2 id="安装配置-ZooKeeper"><a href="#安装配置-ZooKeeper" class="headerlink" title="安装配置 ZooKeeper"></a>安装配置 ZooKeeper</h2><ol>
+<li><p>下载 配置</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开 zoo.cfg 可以配置端口，目录等</span></span><br><span class="line">wget http://mirrors.cnnic.cn/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz</span><br><span class="line">tar zxvf zookeeper-3.4.6.tar.gz</span><br><span class="line"><span class="built_in">cd</span> zookeeper-3.4.6</span><br><span class="line">cp -rf conf/zoo_sample.cfg conf/zoo.cfg</span><br><span class="line">vim conf/zoo.cfg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">bin/zkServer.start</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="安装配置-Kafka"><a href="#安装配置-Kafka" class="headerlink" title="安装配置 Kafka"></a>安装配置 Kafka</h2><ol>
+<li><p>下载 配置 (需要修改 <code>server.properties zookeeper.connect=localhost:2181</code>)</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开 zoo.cfg 可以配置端口，目录等</span></span><br><span class="line">wget http://apache.fayea.com/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz</span><br><span class="line">tar -zxf kafka_2.10-0.8.2.1.tgz</span><br><span class="line"><span class="built_in">cd</span> kafka_2.10-0.8.2.1</span><br><span class="line">vi config/server.properties</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-server-start.config/server.properties</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令简介</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建Topic</span></span><br><span class="line">bin/kafka-topics --create --topic kafkatopic --replication-factor 1 --partitions 1 --zookeeper localhost:2181</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Topic</span></span><br><span class="line">bin/kafka-topics --list --zookeeper localhost:2181</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动Producer 生产消息</span></span><br><span class="line">bin/kafka-console-producer --broker-list localhost:9092 --topic kafkatopic</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动Consumer 消费消息</span></span><br><span class="line">bin/kafka-console-consumer --zookeeper localhost:2181 --topic kafkatopic --from-beginning</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除Topic</span></span><br><span class="line">bin/kafka-run-class kafka.admin.TopicCommand --delete --topic kafkatopic --zookeeper localhost:2181</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看Topic 的offset </span></span><br><span class="line">bin/kafka-consumer-offset-checker    --zookeeper localhost:2181 --topic kafkatopic --group consumer</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="Kadka-监控配置"><a href="#Kadka-监控配置" class="headerlink" title="Kadka 监控配置"></a>Kadka 监控配置</h2><h3 id="KafkaOffsetMonitor-安装配置"><a href="#KafkaOffsetMonitor-安装配置" class="headerlink" title="KafkaOffsetMonitor 安装配置"></a>KafkaOffsetMonitor 安装配置</h3><ol>
+<li><p>下载     <a href="https://github.com/quantifind/KafkaOffsetMonitor/releases/tag/v0.2.0" target="_blank" rel="noopener">https://github.com/quantifind/KafkaOffsetMonitor/releases/tag/v0.2.0</a></p>
+</li>
+<li><p>启动</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">java -cp KafkaOffsetMonitor-assembly-0.2.0.jar \</span><br><span class="line">        com.quantifind.kafka.offsetapp.OffsetGetterWeb \</span><br><span class="line">        --zk loaclhost:2181 \</span><br><span class="line">        --port 8089 \</span><br><span class="line">        --refre10.seconds \</span><br><span class="line">        --retain 2.days</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以用 nohup &amp; 启动</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Kafka-manager"><a href="#Kafka-manager" class="headerlink" title="Kafka-manager"></a>Kafka-manager</h3><ol>
+<li><p>下载     <a href="https://github.com/yahoo/kafka-manager" target="_blank" rel="noopener">https://github.com/yahoo/kafka-manager</a></p>
+</li>
+<li><p>安装配置</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 默认配置java 环境</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/yahoo/kafka-manager/releases</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> kafka-manager</span><br><span class="line"></span><br><span class="line">./sbt clean dist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令执行完成后，在 target/universal 目录中会生产一个zip压缩包kafka-manager-1.3.3.7.zip</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> target/universal </span><br><span class="line"></span><br><span class="line">unzip kafka-manager-1.3.3.7.zip</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置 kafka-manager.zkhosts="localhost:2181"</span></span><br><span class="line">vi conf/application.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这里如果想看见更多信息需要额外配置</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 修改 KAFKA_JMX_OPTS</span></span><br><span class="line">vi kafka-run-class.sh</span><br><span class="line"></span><br><span class="line">    KAFKA_JMX_OPTS=<span class="string">"-Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false    -Dcom.sun.management.jmxremote.ssl=false"</span></span><br><span class="line">    JMX_PORT=9999</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 JMX_PORT</span></span><br><span class="line">vi kafka-server-start.sh</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> JMX_PORT=$&#123;JMX_PORT:-9999</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-manager</span><br><span class="line"><span class="comment"># 可以用 nohup &amp; 启动</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://shuai93.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 shuai</li>
+      <li><a href="https://shuai93.github.io">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

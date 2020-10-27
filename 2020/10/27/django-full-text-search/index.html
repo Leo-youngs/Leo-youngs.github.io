@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    django-full-text-search | 👨‍💻‍的日常
+  </title>
+  <meta name="description" content="日常的自我总结">
+  
+  <meta name="keywords" content="
+  全文检索
+  ">
+  
+  <meta name="author" content="shuai">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 16 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 4 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">👨‍💻‍的日常</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    shuai
+
+    <span class="post-date float-right" title="{{moment(1603786504000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1603786504000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>django-full-text-search</h1>
+    <h2 id="一-mysql-的全文索引"><a href="#一-mysql-的全文索引" class="headerlink" title="一. mysql 的全文索引"></a>一. mysql 的全文索引</h2><p>从MySQL 5.7开始，MySQL内置了ngram全文检索插件，用来支持中文分词，并且对MyISAM和InnoDB引擎有效。</p>
+<ol>
+<li><p>必要的参数设置</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 /etc/mysql/mysql.conf.d/mysqld.cnf 中添加分词以及最小词语长度</span></span><br><span class="line">ft_min_word_len = 2</span><br><span class="line">ngram_token_size = 2</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'ft_min_word_len = 2</span></span><br><span class="line"><span class="string">ngram_token_size = 2'</span> &gt;&gt; mysqld.cnf</span><br><span class="line"></span><br><span class="line">/etc/init.d/mysql restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看配置</span></span><br><span class="line">SHOW VARIABLES LIKE <span class="string">'ft_min_word_len'</span>;</span><br><span class="line"></span><br><span class="line">SHOW VARIABLES LIKE <span class="string">'ngram_token_size'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mysql 索引配置</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- CREATE FULLTEXT INDEX knowledge_knowledge_content_index ON knowledge_knowledge ( content, title );</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 这个方式创建生效成功</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> knowledge_knowledge <span class="keyword">ADD</span> FULLTEXT <span class="keyword">INDEX</span> knowledge_knowledge_content_index ( <span class="keyword">content</span>, title ) <span class="keyword">WITH</span> PARSER ngram;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>django 中适用配置</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"SELECT * from knowledge_knowledge where match(content, title) against('原件' in BOOLEAN MODE);"</span></span><br><span class="line"></span><br><span class="line"> k = Knowledge.objects.raw(sql)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>优点: 不需要引入过多的插件，直接利用数据库的功能。<br>缺点: 随着数据量的增加性能可能成为主要瓶颈，而且不利于项目的扩展</p>
+<h2 id="二-drf-haystack-whoosh-jieba"><a href="#二-drf-haystack-whoosh-jieba" class="headerlink" title="二. drf_haystack whoosh jieba"></a>二. drf_haystack whoosh jieba</h2><p>文档参考</p>
+<ul>
+<li><a href="https://drf-haystack.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">drf_haystack</a></li>
+</ul>
+<ol>
+<li><p>项目依赖下载</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pip install django-haystack</span><br><span class="line">pip install drf_haystack</span><br><span class="line">pip install Whoosh</span><br><span class="line">pip install jieba</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解决 ImportError: cannot import name connections</span></span><br><span class="line"></span><br><span class="line">pip uninstall haystack</span><br><span class="line">pip uninstall django-haystack</span><br><span class="line">pip install django-haystack</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基本配置</p>
+<ul>
+<li><p>修改settings 文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 修改settings 文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># INSTALLED_APPS 注意放在最前面</span></span><br><span class="line"></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line"><span class="string">'django.contrib.admin'</span>,</span><br><span class="line"><span class="string">'django.contrib.auth'</span>,</span><br><span class="line"><span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line"><span class="string">'django.contrib.sessions'</span>,</span><br><span class="line"><span class="string">'django.contrib.messages'</span>,</span><br><span class="line"><span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line"><span class="string">'haystack'</span>,</span><br><span class="line"><span class="string">'rest_framework'</span>,</span><br><span class="line"><span class="string">'knowledge'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">HAYSTACK_CONNECTIONS = &#123;</span><br><span class="line"><span class="string">'default'</span>: &#123;</span><br><span class="line">    <span class="comment"># 'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',</span></span><br><span class="line">    <span class="string">'ENGINE'</span>: <span class="string">'main.whoosh_cn_backend.WhooshEngine'</span>,</span><br><span class="line">    <span class="string">'PATH'</span>: os.path.join(os.path.dirname(__file__), <span class="string">'whoosh_index'</span>),</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当添加、修改、删除数据时，自动生成索引</span></span><br><span class="line">HAYSTACK_SIGNAL_PROCESSOR = <span class="string">'haystack.signals.RealtimeSignalProcessor'</span></span><br><span class="line"><span class="comment"># 设置每页显示的结果数量</span></span><br><span class="line">HAYSTACK_SEARCH_RESULTS_PER_PAGE = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加索引配置文件，项目中新建 search_indexes.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> knowledge.models.Knowledge <span class="keyword">import</span> Knowledge</span><br><span class="line"><span class="keyword">from</span> haystack <span class="keyword">import</span> indexes</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KnowledgeIndex</span><span class="params">(indexes.SearchIndex, indexes.Indexable)</span>:</span></span><br><span class="line"></span><br><span class="line">text = indexes.CharField(document=<span class="literal">True</span>, use_template=<span class="literal">True</span>)</span><br><span class="line">title = indexes.CharField(model_attr=<span class="string">"title"</span>)</span><br><span class="line">content = indexes.CharField(model_attr=<span class="string">"content"</span>)</span><br><span class="line">tag = indexes.CharField(model_attr=<span class="string">"tag"</span>)</span><br><span class="line">creator = indexes.CharField(model_attr=<span class="string">"creator"</span>)</span><br><span class="line">id = indexes.CharField(model_attr=<span class="string">"pk"</span>)</span><br><span class="line">autocomplete = indexes.EdgeNgramField()</span><br><span class="line"></span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prepare_autocomplete</span><span class="params">(obj)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">" "</span>.join((</span><br><span class="line">    obj.title,</span><br><span class="line">    ))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_model</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Knowledge</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index_queryset</span><span class="params">(self, using=None)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.get_model().objects.all()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结巴分词替换whoosh 默认的分词</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 拷贝 `haystack/backends/whoosh_backends.py` 到当前目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 搜索 并修改</span></span><br><span class="line">schema_fields[field_class.index_fieldname] = TEXT(stored=<span class="literal">True</span>, analyzer=StemmingAnalyzer(), field_boost=field_class.boost, sortable=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> jieba.analyse <span class="keyword">import</span> ChineseAnalyzer</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="comment">#注意先找到这个再修改，而不是直接添加  </span></span><br><span class="line">schema_fields[field_class.index_fieldname] = TEXT(stored=<span class="literal">True</span>, analyzer=ChineseAnalyzer(),field_boost=field_class.boost, sortable=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置 路由 视图 序列化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. urls.py</span></span><br><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> routers</span><br><span class="line"></span><br><span class="line">router = routers.SimpleRouter(trailing_slash=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">router.register(<span class="string">"location/search"</span>, KnowledgeSearchViewSet, base_name=<span class="string">"location-search"</span>)</span><br><span class="line"></span><br><span class="line">router.register(<span class="string">"search"</span>, viewset=SearchViewSet, base_name=<span class="string">"search"</span>)  <span class="comment"># MLT name will be 'search-more-like-this'.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. serializers.py</span></span><br><span class="line"><span class="keyword">from</span> drf_haystack.serializers <span class="keyword">import</span> HaystackSerializer</span><br><span class="line"><span class="keyword">from</span> knowledge.search_indexes <span class="keyword">import</span> KnowledgeIndex</span><br><span class="line"><span class="keyword">from</span> drf_haystack.serializers <span class="keyword">import</span> HaystackSerializer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KnowledgeSearchSerializer</span><span class="params">(HaystackSerializer)</span>:</span></span><br><span class="line">    <span class="comment"># more_like_this = serializers.HyperlinkedIdentityField(view_name="search-more-like-this", read_only=True)</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        index_classes = [KnowledgeIndex]</span><br><span class="line">        fields = [<span class="string">'title'</span>, <span class="string">'tag'</span>, <span class="string">'content'</span>, <span class="string">'creator'</span>, <span class="string">'id'</span>, <span class="string">'autocomplete'</span>]</span><br><span class="line">        ignore_fields = [<span class="string">"autocomplete"</span>]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutocompleteSerializer</span><span class="params">(HaystackSerializer)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        index_classes = [KnowledgeIndex]</span><br><span class="line">        fields = [<span class="string">"address"</span>, <span class="string">"city"</span>, <span class="string">"zip_code"</span>, <span class="string">"autocomplete"</span>]</span><br><span class="line">        ignore_fields = [<span class="string">"autocomplete"</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The `field_aliases` attribute can be used in order to alias a</span></span><br><span class="line">        <span class="comment"># query parameter to a field attribute. In this case a query like</span></span><br><span class="line">        <span class="comment"># /search/?q=oslo would alias the `q` parameter to the `autocomplete`</span></span><br><span class="line">        <span class="comment"># field on the index.</span></span><br><span class="line">        field_aliases = &#123;</span><br><span class="line">            <span class="string">"q"</span>: <span class="string">"autocomplete"</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchSerializer</span><span class="params">(HaystackSerializer)</span>:</span></span><br><span class="line"></span><br><span class="line">    more_like_this = serializers.HyperlinkedIdentityField(view_name=<span class="string">"search-more-like-this"</span>, read_only=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        index_classes = [KnowledgeIndex]</span><br><span class="line">        fields = [<span class="string">'title'</span>, <span class="string">'tag'</span>, <span class="string">'content'</span>, <span class="string">'creator'</span>, <span class="string">'id'</span>]</span><br><span class="line"><span class="comment"># 3. views.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> drf_haystack.viewsets <span class="keyword">import</span> HaystackViewSet</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> knowledge.serializers.KnowledgeSerializer <span class="keyword">import</span> KnowledgeSearchSerializer, AutocompleteSerializer, SearchSerializer</span><br><span class="line"><span class="keyword">from</span> drf_haystack.filters <span class="keyword">import</span> HaystackAutocompleteFilter</span><br><span class="line"><span class="keyword">from</span> drf_haystack.viewsets <span class="keyword">import</span> HaystackViewSet</span><br><span class="line"><span class="keyword">from</span> drf_haystack.mixins <span class="keyword">import</span> MoreLikeThisMixin</span><br><span class="line"><span class="keyword">from</span> knowledge.models.Knowledge <span class="keyword">import</span> Knowledge</span><br><span class="line"></span><br><span class="line"><span class="comment"># ViewSet</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KnowledgeSearchViewSet</span><span class="params">(HaystackViewSet)</span>:</span></span><br><span class="line">    index_models = [Knowledge]</span><br><span class="line">    serializer_class = KnowledgeSearchSerializer</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutocompleteSearchViewSet</span><span class="params">(HaystackViewSet)</span>:</span></span><br><span class="line"></span><br><span class="line">    index_models = [Knowledge]</span><br><span class="line">    serializer_class = AutocompleteSerializer</span><br><span class="line">    filter_backends = [HaystackAutocompleteFilter]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchViewSet</span><span class="params">(MoreLikeThisMixin, HaystackViewSet)</span>:</span></span><br><span class="line">    index_models = [Knowledge]</span><br><span class="line">    serializer_class = SearchSerializer</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成索引</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py rebuild_index</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>使用搜索</p>
+<p> 浏览器访问: <a href="http://hotpot-local.bkjk-inc.com:18000/api/v1/knowledge/search?content=span" target="_blank" rel="noopener">dsf_full_search</a></p>
+<p> 注意: 这里有个问题不带条件搜索默认为空，但是使用默认的whoosh 分词，就会是所有的文档</p>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://shuai93.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 shuai</li>
+      <li><a href="https://shuai93.github.io">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

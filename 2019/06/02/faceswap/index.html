@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    faceswap | 👨‍💻‍的日常
+  </title>
+  <meta name="description" content="日常的自我总结">
+  
+  <meta name="keywords" content="
+  换脸
+  ">
+  
+  <meta name="author" content="shuai">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 16 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 4 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">👨‍💻‍的日常</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    shuai
+
+    <span class="post-date float-right" title="{{moment(1559405494000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1559405494000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>faceswap</h1>
+    <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Faceswap是一种利用深度学习手段来交换图片和视频中的面孔的工具。</p>
+<p><a href="https://github.com/deepfakes/faceswap" target="_blank" rel="noopener">github 地址</a></p>
+<p><a href="https://github.com/deepfakes/faceswap/blob/master/USAGE.md" target="_blank" rel="noopener">github 教程</a></p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ol>
+<li><p>cuda 环境 (详情见另一博客 -&gt; <a href="https://shuai93.github.io/2019/05/28/cuda/">cuda/cudnn 安装</a>)</p>
+</li>
+<li><p>tensorflow-gpu 准备</p>
+<p> <a href="https://tensorflow.google.cn/install/source" target="_blank" rel="noopener">linux tensorflwo版本对应</a></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow_gpu==1.12.0</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="基本步骤详解"><a href="#基本步骤详解" class="headerlink" title="基本步骤详解"></a>基本步骤详解</h2><ol>
+<li><p>准备工作 提取图片、视频中人脸信息</p>
+<p> 这里要注意的是可能提取到其他的环境图片需要手动删除部分数据</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提取视频中的人脸数据</span></span><br><span class="line">python faceswap.py extract -i ./faces/demo_2_2018_smw_drsp.mp4  -o ./faces/demo</span><br><span class="line"></span><br><span class="line">python faceswap.py extract -i ./faces/cutout.mp4 -o ./faces/lhy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>训练模型</p>
+<p> 训练数据只需要上一步提取到的人脸数据</p>
+<p> 一般用cpu训练需要数周, gpu训练需要 12-48 小时, 当loss下降到0.015一下才能有所效果</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python faceswap.py train -A ./faces/demo/ -B ./faces/ll/ -m ./demo_ll_model</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用模型生成换脸图</p>
+<p> ffmpeg 分解视频成图片数据然后使用模型替换图片中人脸数据</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用训练数据替换</span></span><br><span class="line">python faceswap.py convert -i ./faces/demo -o ./faces/converted/ -m ./demo_ll_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用原始视频数据替换 （先用ffmpeg将视频分解为每一帧图片数据）</span></span><br><span class="line">ffmpeg -i ./faces/demo_2_2018_smw_drsp.mp4 ./faces/demo_output/video-frame-%d.png</span><br><span class="line"></span><br><span class="line">python faceswap.py convert -i ./faces/demo_output/ -o ./faces/demo_converted/ -m ./demo_ll_model</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分解视频音频并将合成后的视频与音频合并</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分解视频 音频</span></span><br><span class="line">ffmpeg -i demo_2_2018_smw_drsp.mp4 -vn -y -acodec copy 3.aac</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换脸后的图片合成视频</span></span><br><span class="line">ffmpeg -i ./faces/demo_converted/video-frame-%0d.png -c:v libx264 -vf <span class="string">"fps=25,format=yuv420p"</span> lz_demo.mp4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合成音频与视频</span></span><br><span class="line">ffmpeg -i 1.mp4 -i 1.aac -c:v copy -c:a aac -strict experimental 1_yzx.mp4</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 tensorboard 查看网络结构以及训练过程</p>
+<p> 这里能够看到整个faceswap的网络结构以及训练的收敛速度</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开log文件</span></span><br><span class="line">tensorboard --logdir ./demo_ll_model/</span><br><span class="line"></span><br><span class="line">TensorBoard 1.12.2 at http://yixue-pc:6006 (Press CTRL+C to quit)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器打开就可以观看了 这里只能看到序列</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="其他工具简介"><a href="#其他工具简介" class="headerlink" title="其他工具简介"></a>其他工具简介</h2><h3 id="you-get-视频下载工具"><a href="#you-get-视频下载工具" class="headerlink" title="you-get 视频下载工具"></a>you-get 视频下载工具</h3><ol>
+<li><p>安装</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install you-get</span><br><span class="line"></span><br><span class="line">brew install youtube-dl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用详解</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看视频的信息以及可选格式</span></span><br><span class="line">youtube-dl -F https://v.youku.com/v_show/id_XMzg0NjMzMjg2OA\=\=.html\?spm\=a2h0k.11417342.soresults.dtitle</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载 -F返回的具体格式视频</span></span><br><span class="line">youtube-dl -f 3  https://v.youku.com/v_show/id_XMzg0NjMzMjg2OA\=\=.html\?spm\=a2h0k.11417342.soresults.dtitle</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="ffmpeg-视频处理工具"><a href="#ffmpeg-视频处理工具" class="headerlink" title="ffmpeg 视频处理工具"></a>ffmpeg 视频处理工具</h3><ol>
+<li><p>安装</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mac 安装</span></span><br><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基本使用</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 提取视频的一部分</span></span><br><span class="line">ffmpeg  -i ./Downloads/5cdbcf72e6de1.mp4 -vcodec copy -acodec copy -ss 00:08:10 -to 00:13:00 ./Downloads/cutout.mp4 -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将视频 MP4 转化为 GIF</span></span><br><span class="line">ffmpeg -i small.mp4 small.gif</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转化视频中的一部分为 GIF</span></span><br><span class="line">ffmpeg -t 3 -ss 00:00:02 -i small.webm small-clip.gif</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转化高质量 GIF</span></span><br><span class="line">默认转化是中等质量模式，若要转化出高质量的 gif，可以修改比特率</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加倍速播放视频</span></span><br><span class="line">ffmpeg -i input.mov -filter:v <span class="string">"setpts=0.5*PTS"</span> output.mov</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义帧率 16fps:</span></span><br><span class="line">ffmpeg -i input.mov -r 16 -filter:v <span class="string">"setpts=0.125*PTS"</span> -an output.mov</span><br><span class="line"></span><br><span class="line"><span class="comment"># 慢倍速播放视频</span></span><br><span class="line">ffmpeg -i input.mov -filter:v <span class="string">"setpts=2.0*PTS"</span> output.mov</span><br><span class="line"></span><br><span class="line"><span class="comment"># 静音视频（移除视频中的音频） -an 就是禁止音频输出</span></span><br><span class="line">ffmpeg -i input.mov -an mute-output.mov</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 GIF 转化为 MP4</span></span><br><span class="line">ffmpeg -f gif -i animation.gif animation.mp4</span><br><span class="line"></span><br><span class="line"><span class="comment">#也可以将 gif 转为其他视频格式</span></span><br><span class="line">ffmpeg -f gif -i animation.gif animation.mpeg</span><br><span class="line"></span><br><span class="line">ffmpeg -f gif -i animation.gif animation.webm</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取 GIF 的第一帧图片</span></span><br><span class="line"><span class="comment">#使用 ImageMagick 可以方便第提取 gif 图片的第 N 帧图像。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#安装 ImageMagick</span></span><br><span class="line"></span><br><span class="line">brew install imagemagick</span><br><span class="line"><span class="comment">#提取第一帧</span></span><br><span class="line"></span><br><span class="line">convert <span class="string">'animation.gif[0]'</span> animation-first-frame.gif</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://shuai93.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 shuai</li>
+      <li><a href="https://shuai93.github.io">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    py_setup | 👨‍💻‍的日常
+  </title>
+  <meta name="description" content="日常的自我总结">
+  
+  <meta name="keywords" content="
+  python
+  ">
+  
+  <meta name="author" content="shuai">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 16 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 15 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 4 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">👨‍💻‍的日常</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    shuai
+
+    <span class="post-date float-right" title="{{moment(1559540301000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      <i class="fa fa-pencil-square-o"></i>
+      {{moment(1559540301000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>py_setup</h1>
+    <h2 id="setup-简介"><a href="#setup-简介" class="headerlink" title="setup 简介"></a>setup 简介</h2><p>Python setup 是打包分发工具可以将自己的项目打包成packeage然后供他人使用</p>
+<p>可以setup中标明项目的依赖以及安装条件似的当前模块能够正确安装并使用</p>
+<h2 id="setup-实战"><a href="#setup-实战" class="headerlink" title="setup 实战"></a>setup 实战</h2><h3 id="一些参数介绍"><a href="#一些参数介绍" class="headerlink" title="一些参数介绍"></a>一些参数介绍</h3><ol>
+<li><p>packages<br>告诉Distutils需要处理那些包（包含<strong>init</strong>.py的文件夹）</p>
+</li>
+<li><p>package_dir<br>告诉Distutils哪些目录下的文件被映射到哪个源码包，感觉好像是一个相对路径的定义。一个例子：package_dir = {‘’: ‘lib’}，表示以lib为主目录。</p>
+</li>
+<li><p>ext_modules<br>是一个包含Extension实例的列表，Extension的定义也有一些参数。</p>
+</li>
+<li><p>ext_package<br>定义extension的相对路径</p>
+</li>
+<li><p>requires<br>定义依赖哪些模块</p>
+</li>
+<li><p>provides<br>定义可以为哪些模块提供依赖</p>
+</li>
+<li><p>scripts<br>指定python源码文件，可以从命令行执行。在安装时指定–install-script</p>
+</li>
+<li><p>package_data<br>通常包含与包实现相关的一些数据文件或类似于readme的文件。</p>
+</li>
+</ol>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>需要注意的是 package_data 时候需要在代码中使用</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单的说就是 使用项目所在目录完成配置文件的读取</span></span><br><span class="line">os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__),<span class="string">".."</span>)), <span class="string">'resources/'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>install_requires 填写包依赖可以自动匹配依赖包</p>
+</li>
+<li><p><code>__init__.py</code> 文件中可以指定需要导入的包也可以指定版本等</p>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译</span></span><br><span class="line">python3 setup.py build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">python3 setup.py install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 制作分发包</span></span><br><span class="line">python3 setup.py sdist</span><br></pre></td></tr></table></figure>
+
+<h2 id="setup-配置实例"><a href="#setup-配置实例" class="headerlink" title="setup 配置实例"></a>setup 配置实例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import re</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line">from setuptools import find_packages, setup</span><br><span class="line"></span><br><span class="line">_version_re = re.compile(r<span class="string">'__version__\s+=\s+(.*)'</span>)</span><br><span class="line"></span><br><span class="line">PY_VER = sys.version_info</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> PY_VER &lt; (3, 6):</span><br><span class="line">    raise RuntimeError(<span class="string">"pks doesn't support Python version prior 3.6"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def read_version():</span><br><span class="line">    regexp = re.compile(r<span class="string">"^__version__\W*=\W*'([\d.abrc]+)'"</span>)</span><br><span class="line">    init_py = os.path.join(os.path.dirname(__file__), <span class="string">'pks'</span>, <span class="string">'__init__.py'</span>)</span><br><span class="line">    with open(init_py) as f:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">            match = regexp.match(line)</span><br><span class="line">            <span class="keyword">if</span> match is not None:</span><br><span class="line">                <span class="built_in">return</span> match.group(1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def <span class="built_in">read</span>(file_name):</span><br><span class="line">    with open(os.path.join(os.path.dirname(__file__), file_name), encoding=<span class="string">'utf-8'</span>) as f:</span><br><span class="line">        <span class="built_in">return</span> f.read()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">'pks'</span>,</span><br><span class="line">    version=read_version(),</span><br><span class="line">    author=<span class="string">'yixue'</span>,</span><br><span class="line">    description=<span class="string">"Async Python 3.6+ web scraping micro-framework based on asyncio."</span>,</span><br><span class="line">    long_description=<span class="built_in">read</span>(<span class="string">'README.md'</span>),</span><br><span class="line">    long_description_content_type=<span class="string">'text/markdown'</span>,</span><br><span class="line">    author_email=<span class="string">'*@songshuai.cn'</span>,</span><br><span class="line">    python_requires=<span class="string">'&gt;=3.6'</span>,</span><br><span class="line">    install_requires=[<span class="string">'pandas'</span>],</span><br><span class="line">    packages=find_packages(),</span><br><span class="line">    classifiers=[</span><br><span class="line">        <span class="string">"Operating System :: POSIX :: Linux"</span>,</span><br><span class="line">    ],</span><br><span class="line">    project_urls=&#123;</span><br><span class="line">        <span class="string">'Source'</span>: <span class="string">'hhttp://gitlab.yx/dw/pks'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    package_data = &#123;<span class="string">'pks'</span>: [<span class="string">'resources/*.csv'</span>],&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://shuai93.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 shuai</li>
+      <li><a href="https://shuai93.github.io">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
