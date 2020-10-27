@@ -131,7 +131,9 @@
     shuai
 
     <span class="post-date float-right" title="{{moment(1524885520000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      <i class="fa fa-pencil-square-o"></i>
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
       {{moment(1524885520000).fromNow()}}
     </span>
   </h3>
@@ -149,7 +151,7 @@
 
 <h3 id="hexo-創建"><a href="#hexo-創建" class="headerlink" title="hexo 創建"></a>hexo 創建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo_init</span><br><span class="line"><span class="built_in">cd</span> hexo_init</span><br><span class="line">hexo init</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p>登錄 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>  查看效果</p>
+<p>登录 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>  查看效果</p>
 <h3 id="下載主題"><a href="#下載主題" class="headerlink" title="下載主題"></a>下載主題</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tufu9441/maupassant-hexo.git themes/maupassant</span><br><span class="line">npm install hexo-renderer-pug --save</span><br><span class="line">npm install hexo-renderer-sass --save</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改yml文件"><a href="#修改yml文件" class="headerlink" title="修改yml文件"></a>修改yml文件</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">maupassant</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/Leo-youngs/Leo-youngs.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">update</span></span><br></pre></td></tr></table></figure>
