@@ -1,8 +1,8 @@
 ---
 title: mac coding
 date: 2019-06-25 21:50:51
-tags: 
-categories: mac
+tags: 日常
+categories: 后端
 ---
 
 ## Mac 环境下配置开发环境

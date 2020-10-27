@@ -1,8 +1,8 @@
 ---
 title: Greenplum
 date: 2018-05-30 10:52:58
-tags: 数据仓库 教程
-categories: data warehouse
+tags: 数据仓库
+categories: 后端
 ---
 
 ## 基本介绍

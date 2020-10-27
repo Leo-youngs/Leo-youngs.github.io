@@ -1,8 +1,8 @@
 ---
 title: tornado_process
 date: 2019-06-10 00:18:52
-tags: tornado web 
-categories: python
+tags: tornado
+categories: 后端
 ---
 
 ## tornado中使用多进程处理任务

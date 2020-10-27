@@ -1,8 +1,8 @@
 ---
 title: Code 日常
 date: 2018-05-08 10:07:55
-tags: linux python docker
-categories: bug
+tags: linux
+categories: 后端
 ---
 
 ## 日常问题、小技巧收集

@@ -1,7 +1,8 @@
 ---
 title: generate_excel_columns
 date: 2019-11-20 10:00:03
-categories: python
+tags: python
+categories: 算法
 ---
 
 ## 问题描述
