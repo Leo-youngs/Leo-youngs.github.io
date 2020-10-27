@@ -102,7 +102,7 @@ Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库�
     service iptables stop
     chkconfig iptables off
 
-    [root@mdw selinux]# cat /etc/selinux/config 
+    [root@mdw selinux]# cat /etc/selinux/config
     # This file controls the state of SELinux on the system.
     # SELINUX= can take one of these three values:
     #     enforcing - SELinux security policy is enforced.
@@ -112,13 +112,13 @@ Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库�
     # SELINUXTYPE= can take one of these two values:
     #     targeted - Targeted processes are protected,
     #     mls - Multi Level Security protection.
-    SELINUXTYPE=targeted 
+    SELINUXTYPE=targeted
 
     ```
 
 ## 下载安装包并安装
 
-1. 官网下载 https://network.pivotal.io/products/pivotal-gpdb  (这里可能需要注册)
+1. 官网下载 <https://network.pivotal.io/products/pivotal-gpdb>  (这里可能需要注册)
 
     ``` bash
     # greenplum 安装包
@@ -164,7 +164,7 @@ Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库�
     MASTER_HOSTNAME=mdw
     # 指定 Master 的数据目录
     MASTER_DIRECTORY=/home/gpadmin/gpdata/gpmaster
-    # Master 的端口 
+    # Master 的端口
     MASTER_PORT=2345
     # 指定Bash的版本
     TRUSTED_SHELL=/usr/bin/ssh
@@ -185,7 +185,7 @@ Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库�
     # 这里需要输入 segment  gpadmin的密码 成功则 completed successfully
 
 
-    gpssh-exkeys -f /home/gpadmin/conf/hostlist 
+    gpssh-exkeys -f /home/gpadmin/conf/hostlist
 
     # 批量创建文件
     gpssh -f /home/gpadmin/conf/hostlist
@@ -217,7 +217,7 @@ Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库�
 6. 在每个节点上配置.bash_profile环境变量
 
     ```bash
-    [gpadmin@mdw ~]$ cat .bash_profile 
+    [gpadmin@mdw ~]$ cat .bash_profile
     # .bash_profile
 
     # Get the aliases and functions
@@ -342,9 +342,9 @@ Greenplum是一个MPP（海量并行处理）计算框架的分布式数据库�
 
 参考连接 :
 
-https://yq.aliyun.com/articles/177
+<https://yq.aliyun.com/articles/177>
 
-https://discuss.pivotal.io/hc/en-us/articles/201202707-How-to-Use-gpexpand-Working-with-One-Host
+<https://discuss.pivotal.io/hc/en-us/articles/201202707-How-to-Use-gpexpand-Working-with-One-Host>
 
 ## BUG 记录
 
