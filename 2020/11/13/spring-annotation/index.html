@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    spring-annotation | 👨‍💻‍的日常
+  </title>
+  <meta name="description" content="日常的自我总结">
+  
+  <meta name="keywords" content="
+  java
+  ">
+  
+  <meta name="author" content="shuai">
+
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+</head>
+
+<body id="replica-app">
+
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
+
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
+        </div>
+      </div>
+
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/archives">Archives</a></li>
+        
+        
+        <li><a href="/categories">Categories</a></li>
+        
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg?v=4&amp;s=460"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/archives" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/archives"
+           class="header-toolbar-right"> 17 </a>
+      </li>
+      <li>
+        <a href="/tags" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/tags"
+           class="header-toolbar-right"> 16 </a>
+      </li>
+      <li>
+        <a href="/categories" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/categories"
+           class="header-toolbar-right"> 4 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">👨‍💻‍的日常</a>
+      
+      
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
+
+
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    shuai
+
+    <span class="post-date float-right" title="{{moment(1605258075000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1605258075000).fromNow()}}
+    </span>
+  </h3>
+
+  <article class="post-content">
+    <h1>spring-annotation</h1>
+    <h2 id="基于spring的注解开发"><a href="#基于spring的注解开发" class="headerlink" title="基于spring的注解开发"></a>基于spring的注解开发</h2><p>类似python的装饰器可以实现一下功能</p>
+<ul>
+<li>动态修改属性</li>
+<li>动态新增功能（不侵入原代码）</li>
+<li>动态改变执行逻辑</li>
+</ul>
+<h3 id="spring-配置略过"><a href="#spring-配置略过" class="headerlink" title="spring 配置略过"></a>spring 配置略过</h3><h3 id="开发注解"><a href="#开发注解" class="headerlink" title="开发注解"></a>开发注解</h3><pre><code>1. 定义注解
+
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Target</span>(&#123;ElementType.PARAMETER, ElementType.FIELD, ElementType.LOCAL_VARIABLE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Patch &#123;</span><br><span class="line">    <span class="function">String  <span class="title">key</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">    <span class="function">String  <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+2. 注解实现
+
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.*;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.reflect.MethodSignature;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StopWatch;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Author</span> 杨帅</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Date</span> 2020/11/12 23:09</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PatchAspect</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span>(<span class="string">"Patch()"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">(JoinPoint joinPoint)</span>  </span>&#123;</span><br><span class="line">        <span class="comment">// 记录参数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterReturning</span>(pointcut = <span class="string">"Patch()"</span>,returning=<span class="string">"returnValue"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterJoinPoint</span><span class="params">(JoinPoint joinPoint ,Object returnValue)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 记录返回值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Pointcut</span>(<span class="string">"@annotation(注解路径)"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">patch</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Around</span>(<span class="string">"Patch()"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">around</span><span class="params">(ProceedingJoinPoint joinPoint)</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            StopWatch sw = <span class="keyword">new</span> StopWatch();</span><br><span class="line">            sw.start();</span><br><span class="line">            <span class="comment">//获取方法参数</span></span><br><span class="line">            Object[] args = joinPoint.getArgs();</span><br><span class="line">            MethodSignature sign = (MethodSignature) joinPoint.getSignature();</span><br><span class="line">            String[] parameterNames = sign.getParameterNames();</span><br><span class="line">            System.out.println(<span class="string">"parameter list: "</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; parameterNames.length; i++) &#123;</span><br><span class="line">                System.out.println(parameterNames[i] + <span class="string">" = "</span> + args[i]);</span><br><span class="line">                <span class="comment">// 这里可以通过参数名配合注解的值直接修改对应的参数 做拦截操作或者参数校验</span></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//获取注解参数</span></span><br><span class="line">            Patch annotation =  sign.getMethod().getAnnotation(Patch<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">            System.out.println(<span class="string">"value = "</span> + annotation.value());</span><br><span class="line">            System.out.println(<span class="string">"key = "</span> + annotation.key());</span><br><span class="line"></span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            // 这里可以不知道注解的情况下获取注解</span></span><br><span class="line"><span class="comment">            Annotation[][] annotations;</span></span><br><span class="line"><span class="comment">            try &#123;</span></span><br><span class="line"><span class="comment">                annotations = pjp.getTarget().getClass().</span></span><br><span class="line"><span class="comment">                        getMethod(methodName, parameterTypes).getParameterAnnotations();</span></span><br><span class="line"><span class="comment">            &#125; catch (Exception e) &#123;</span></span><br><span class="line"><span class="comment">                throw new SoftException(e);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//执行方法</span></span><br><span class="line">            joinPoint.proceed();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//方法执行后逻辑</span></span><br><span class="line">            sw.stop(args);</span><br><span class="line">            System.out.println(sw.prettyPrint());</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">            throwable.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>注解本质意义上就是代码的注释，如果没有实现解析的逻辑那么仅仅是注释。<br>对于注释有两种方式，一种是编译直接扫描，一种是运行时反射。<br>注意：基于 java 注解的开发不同于动态语言的简单逻辑，很多时候需要在代码中有效的处理各种类型的判断以及各种未知</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="https://www.cnblogs.com/yangming1996/p/9295168.html" target="_blank" rel="noopener">JAVA 注解的基本原理</a></p>
+
+  </article>
+</div>
+
+
+    
+
+
+
+
+</div>
+
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="https://shuai93.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 shuai</li>
+      <li><a href="https://shuai93.github.io">Home</a></li>
+      
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
+    </div>
+    </div>
+    
+  </footer>
+</div>
+
+
+
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
