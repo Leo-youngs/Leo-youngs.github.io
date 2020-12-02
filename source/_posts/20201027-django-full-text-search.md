@@ -232,9 +232,3 @@ categories: 后端
     ```bash
     python3 manage.py rebuild_index
     ```
-
-3. 使用搜索
-
-    浏览器访问: [dsf_full_search](http://hotpot-local.bkjk-inc.com:18000/api/v1/knowledge/search?content=span)
-
-    注意: 这里有个问题不带条件搜索默认为空，但是使用默认的whoosh 分词，就会是所有的文档
